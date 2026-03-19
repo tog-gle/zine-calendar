@@ -120,7 +120,7 @@
     .badge--comitia      { background: #cc6600; color: #fff; }
     .badge--k_comitia    { background: #cc6600; color: #fff; }
     .badge--comiket      { background: #333; color: #fff; }
-    .badge--manual       { background: #111; color: #fff; }
+    .badge--manual       { background: #111; color: #fff; font-weight: bold; }
 
     .filter-btn--diybooks {
       border: 2px solid #111;
@@ -213,9 +213,15 @@
 
     function render() {
       const cal = document.getElementById('calendar');
-      const events = currentCat === 'all'
+      const filtered = currentCat === 'all'
         ? allEvents
         : allEvents.filter(function(e) { return e.category === currentCat; });
+      // 日付順に並べ直す（念のため）
+      const events = filtered.slice().sort(function(a, b) {
+        const da = a.date || '9999-99-99';
+        const db = b.date || '9999-99-99';
+        return da < db ? -1 : da > db ? 1 : 0;
+      });
 
       if (!events.length) {
         cal.innerHTML = '<p class="empty">該当するイベントがありません。</p>';
