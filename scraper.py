@@ -430,6 +430,24 @@ def load_manual_events():
 
 
 # ─────────────────────────────────────────────
+# GAS自動追加の文フリイベントを読み込む
+# ─────────────────────────────────────────────
+def load_bunfree_events():
+    """GASが自動更新する docs/bunfree_events.json を読み込む"""
+    path = "docs/bunfree_events.json"
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            events = json.load(f)
+        print(f"[文フリ自動] {len(events)} events loaded")
+        return events
+    except Exception as e:
+        print(f"[文フリ自動] 読み込みエラー: {e}")
+        return []
+
+
+# ─────────────────────────────────────────────
 # メイン
 # ─────────────────────────────────────────────
 def run_all():
@@ -442,7 +460,8 @@ def run_all():
     all_events += scrape_comitia()
     all_events += scrape_k_comitia()
     all_events += scrape_comiket()
-    all_events += load_manual_events()
+    all_events += load_manual_events()   # 手動イベント（ZINEの商店街など）
+    all_events += load_bunfree_events()  # GAS自動追加の文フリイベント
 
     all_events.sort(key=lambda e: e.get("date") or "9999-99-99")
 
