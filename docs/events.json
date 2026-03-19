@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-19T14:20:16.096517",
-  "count": 66,
+  "updated_at": "2026-03-19T14:33:20.369441",
+  "count": 68,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -280,6 +280,24 @@
       "url": "https://note.com/bookcultureclub/n/n491adfe116c1",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEの商店街",
+      "date": "2026-04-18",
+      "date_display": "2026年4月18日",
+      "venue": "DIY BOOKS（尼崎・武庫之荘）",
+      "url": "https://www.instagram.com/p/DWD6CTNgTAp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "category": "DIY BOOKS",
+      "source": "manual"
+    },
+    {
+      "title": "Oui,ZINE8",
+      "date": "2026-04-18",
+      "date_display": "2026年4月18日",
+      "venue": "DIY BOOKS（尼崎・武庫之荘）",
+      "url": "https://diybooks.jp",
+      "category": "DIY BOOKS",
+      "source": "manual"
     },
     {
       "title": "ZINEフェス福岡",
