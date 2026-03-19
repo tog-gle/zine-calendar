@@ -1,5 +1,131 @@
 [
   {
+    "title": "文学フリマ京都9",
+    "date": "2025-01-19",
+    "date_display": "2025年1月19日",
+    "venue": "京都市勧業館みやこめっせ 1F 第二展示場 ABCD面 (左京区岡崎)",
+    "url": "https://bunfree.net/event/kyoto09/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ札幌10",
+    "date": "2025-02-09",
+    "date_display": "2025年2月9日",
+    "venue": "札幌コンベンションセンター 大ホール",
+    "url": "https://bunfree.net/event/sapporo10/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ広島",
+    "date": "2025-02-09",
+    "date_display": "2025年2月9日",
+    "venue": "広島県立広島産業会館 東展示館 第2・第3展示場",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ大阪13",
+    "date": "2025-05-11",
+    "date_display": "2025年5月11日",
+    "venue": "インテックス大阪 2号館",
+    "url": "https://bunfree.net/event/osaka13/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ東京40",
+    "date": "2025-05-11",
+    "date_display": "2025年5月11日",
+    "venue": "東京ビッグサイト 南1-4ホール",
+    "url": "https://bunfree.net/event/tokyo40/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ岩手10",
+    "date": "2025-06-15",
+    "date_display": "2025年6月15日",
+    "venue": "岩手県産業会館（サンビル） 7F大ホール",
+    "url": "https://bunfree.net/event/iwate10/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ京都10",
+    "date": "2025-08-03",
+    "date_display": "2025年8月3日",
+    "venue": "京都市勧業館みやこめっせ 1F 第二展示場・3F 第三展示場（京都市左京区）",
+    "url": "https://bunfree.net/event/kyoto10/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ香川2",
+    "date": "2025-08-03",
+    "date_display": "2025年8月3日",
+    "venue": "高松シンボルタワー展示場 + 市民ギャラリー",
+    "url": "https://bunfree.net/event/kagawa02/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ広島8",
+    "date": "2025-08-24",
+    "date_display": "2025年8月24日",
+    "venue": "広島県立広島産業会館 東展示館 第1・第2展示場（広島市南区）★拡大しました",
+    "url": "https://bunfree.net/event/hiroshima08/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ福岡11 ",
+    "date": "2025-10-05",
+    "date_display": "2025年10月5日",
+    "venue": "博多国際展示場&カンファレンスセンター 3F (福岡県福岡市)",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ東京42",
+    "date": "2025-11-23",
+    "date_display": "2025年11月23日",
+    "venue": "東京ビッグサイト 南1-4ホール（東京都江東区有明）",
+    "url": "https://bunfree.net/event/tokyo42/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ香川3",
+    "date": "2026-01-18",
+    "date_display": "2026年1月18日",
+    "venue": "サンポート高松シンボルタワー展示場+コミュニケーションプラザ (香川県高松市)",
+    "url": "https://bunfree.net/event/kagawa03/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ札幌11",
+    "date": "2026-01-18",
+    "date_display": "2026年1月18日",
+    "venue": "札幌コンベンションセンター 大ホール (札幌市白石区)",
+    "url": "https://bunfree.net/event/sapporo11/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ岩手11",
+    "date": "2026-01-18",
+    "date_display": "2026年1月18日",
+    "venue": "岩手県産業会館7F大ホール (岩手県盛岡市)",
+    "url": "https://bunfree.net/event/iwate11/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
     "title": "ZINEの商店街",
     "date": "2026-04-18",
     "date_display": "2026年4月18日",
@@ -14,6 +140,24 @@
     "date_display": "2026年5月4日",
     "venue": "東京ビッグサイト",
     "url": "https://bunfree.net/event/tokyo42/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ福岡12",
+    "date": "2026-05-04",
+    "date_display": "2026年5月4日",
+    "venue": "博多国際展示場&カンファレンスセンター 3F(福岡市博多区)",
+    "url": "https://bunfree.net/event/fukuoka12/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ大阪14",
+    "date": "2026-05-04",
+    "date_display": "2026年5月4日",
+    "venue": "インテックス大阪 2号館 (大阪市住之江区)",
+    "url": "https://bunfree.net/event/osaka14/",
     "category": "文学フリマ",
     "source": "manual"
   },
