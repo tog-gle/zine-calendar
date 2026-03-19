@@ -1,0 +1,50 @@
+name: ZINE Calendar Sync
+
+on:
+  schedule:
+    - cron: "0 0 * * 1,4"   # 毎週月・木 朝9時 JST
+  workflow_dispatch:          # 手動実行可能
+
+# GitHub Pages へのデプロイに必要な権限
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Show results
+        run: |
+          python -c "
+          import json
+          with open('docs/events.json') as f:
+              d = json.load(f)
+          print(f'件数: {d[\"count\"]}件')
+          for e in d['events'][:5]:
+              print(f'  {e[\"date\"]} {e[\"title\"]}')
+          "
+
+      # docs/events.json の変更をコミット・プッシュ → GitHub Pagesに自動反映
+      - name: Commit and push events.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/events.json
+          git diff --staged --quiet || git commit -m "chore: update events.json [$(date '+%Y-%m-%d')]"
+          git push
