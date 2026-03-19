@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-19T14:10:38.757949",
-  "count": 65,
+  "updated_at": "2026-03-19T14:20:16.096517",
+  "count": 66,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -253,6 +253,15 @@
       "url": "https://note.com/bookcultureclub/n/nfd75a0e8c9f6",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "技術書典20（オフライン）",
+      "date": "2026-04-12",
+      "date_display": "2026年4月12日",
+      "venue": "池袋サンシャインシティ 展示ホールD（文化会館ビル2F）",
+      "url": "https://techbookfest.org/",
+      "category": "技術書典",
+      "source": "techbookfest"
     },
     {
       "title": "文学フリマ岩手11",
