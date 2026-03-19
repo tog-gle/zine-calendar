@@ -1,8 +1,5 @@
 """
-ZINE Event Calendar Scraper v4
-対象: TABF, 文学フリマ, まちのZINEフェス, ZINEフェス(note),
-      Art Book Osaka, コミティア, 関西コミティア, コミックマーケット
-出力先: docs/events.json
+ZINE Event Calendar Scraper v5
 """
 
 import requests
@@ -33,6 +30,20 @@ def fetch(url, encoding=None):
         print(f"[FETCH ERROR] {url}: {e}")
         return None
 
+def fetch_text(url, encoding=None):
+    """BeautifulSoupではなく生テキストを返す"""
+    try:
+        res = requests.get(url, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        if encoding:
+            res.encoding = encoding
+        else:
+            res.encoding = res.apparent_encoding
+        return res.text
+    except Exception as e:
+        print(f"[FETCH ERROR] {url}: {e}")
+        return ""
+
 
 # ─────────────────────────────────────────────
 # 1. Tokyo Art Book Fair
@@ -51,10 +62,9 @@ def scrape_tabf():
     if dates_raw:
         first = dates_raw[0]
         last = dates_raw[-1]
-        date_str = f"{year}-{int(first[0]):02d}-{int(first[1]):02d}"
         events.append({
             "title": "TOKYO ART BOOK FAIR",
-            "date": date_str,
+            "date": f"{year}-{int(first[0]):02d}-{int(first[1]):02d}",
             "date_display": f"{year}年{first[0]}月{first[1]}日〜{last[0]}月{last[1]}日",
             "venue": venue,
             "url": "https://tokyoartbookfair.com/",
@@ -67,35 +77,52 @@ def scrape_tabf():
 
 # ─────────────────────────────────────────────
 # 2. 文学フリマ
+#    WordPress REST APIで投稿一覧を取得
+#    タイトルに "文学フリマXX – YYYY/M/D" のパターンが含まれる
 # ─────────────────────────────────────────────
 def scrape_bunfree():
     events = []
-    soup = fetch("https://bunfree.net/event/")
-    if not soup:
-        print("[文学フリマ] フェッチ失敗 - スキップ")
+    # WordPress REST API: /wp-json/wp/v2/pages でイベントページを取得
+    api_url = "https://bunfree.net/wp-json/wp/v2/pages?per_page=50&orderby=date&order=desc"
+    try:
+        res = requests.get(api_url, headers=HEADERS, timeout=15)
+        res.raise_for_status()
+        pages = res.json()
+    except Exception as e:
+        print(f"[文学フリマ] API取得失敗: {e}")
         return events
-    event_links = soup.find_all("a", href=re.compile(r"/event/[^/]+/?$"))
-    for link in event_links[:10]:
-        href = link.get("href", "")
-        if not href.startswith("http"):
-            href = "https://bunfree.net" + href
-        text = link.get_text(strip=True)
-        if not text or len(text) < 3:
+
+    for page in pages:
+        slug = page.get("slug", "")
+        title_raw = page.get("title", {}).get("rendered", "")
+        # slugパターン: "tokyo42", "osaka14", "fukuoka12" など
+        if not re.match(r"[a-z]+-\d+$", slug):
             continue
-        date_match = re.search(r"(\d{4})年?(\d{1,2})月(\d{1,2})日", text)
-        date_str = ""
-        if date_match:
-            y, m, d = date_match.groups()
-            date_str = f"{y}-{int(m):02d}-{int(d):02d}"
+        # タイトルから日付を抽出: "文学フリマ東京42 – 2026/5/4(月祝)"
+        date_match = re.search(r"(\d{4})/(\d{1,2})/(\d{1,2})", title_raw)
+        if not date_match:
+            # contentから探す
+            content = page.get("content", {}).get("rendered", "")
+            date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", content)
+        if not date_match:
+            continue
+        y, m, d = date_match.groups()
+        # タイトルのHTMLタグを除去
+        title_clean = re.sub(r"<[^>]+>", "", title_raw).strip()
+        # "開催終了" などは除外
+        if "開催終了" in title_clean or "終了" in title_clean:
+            continue
+        link = page.get("link", "https://bunfree.net/event/")
         events.append({
-            "title": text,
-            "date": date_str,
-            "date_display": text,
+            "title": title_clean,
+            "date": f"{y}-{int(m):02d}-{int(d):02d}",
+            "date_display": f"{y}年{m}月{d}日",
             "venue": "各地会場",
-            "url": href,
+            "url": link,
             "category": "文学フリマ",
             "source": "bunfree"
         })
+
     print(f"[文学フリマ] {len(events)} events found")
     return events
 
@@ -146,7 +173,7 @@ def scrape_mzfest():
             "date_display": date_display,
             "venue": venue[:50],
             "url": page_url,
-            "category": "まちのZINEフェス",   # ← 修正済み
+            "category": "まちのZINEフェス",
             "source": "mzfest"
         })
     print(f"[まちのZINEフェス] {len(events)} events found")
@@ -209,25 +236,16 @@ def scrape_artbookosaka():
     title_match = re.search(r"Art Book Osaka \d{4}", text)
     title = title_match.group(0) if title_match else "Art Book Osaka"
     date_match = re.search(r"(\d{4})年\s*(\d{1,2})月(\d{1,2})日", text)
-    venue_match = re.search(r"会場[^\n]*[\n　 ]+([^\n]+)", text)
-    venue = "シーサイドスタジオCASO（大阪）"
-    if venue_match:
-        v = venue_match.group(1).strip()
-        if v:
-            venue = v[:40]
     if date_match:
         y, m, d = date_match.groups()
-        date_str = f"{y}-{int(m):02d}-{int(d):02d}"
         end_match = re.search(
-            r"(\d{4})年\s*(\d{1,2})月(\d{1,2})日[^～\n]*[～〜]\s*(\d{1,2})日",
-            text
-        )
+            r"(\d{4})年\s*(\d{1,2})月(\d{1,2})日[^～\n]*[～〜]\s*(\d{1,2})日", text)
         date_display = f"{y}年{m}月{d}日〜{end_match.group(4)}日" if end_match else f"{y}年{m}月{d}日"
         events.append({
             "title": title,
-            "date": date_str,
+            "date": f"{y}-{int(m):02d}-{int(d):02d}",
             "date_display": date_display,
-            "venue": venue,
+            "venue": "シーサイドスタジオCASO（大阪）",
             "url": "https://artbookosaka.com/",
             "category": "アートブックフェア",
             "source": "artbookosaka"
@@ -238,41 +256,30 @@ def scrape_artbookosaka():
 
 # ─────────────────────────────────────────────
 # 6. コミティア（東京）
-#    schedule.html は「日程：YYYY年M月D日」形式
 # ─────────────────────────────────────────────
 def scrape_comitia():
     events = []
     soup = fetch("https://www.comitia.co.jp/html/schedule.html")
     if not soup:
         return events
-
-    # h3タグ: "COMITIA156" など
     for h3 in soup.find_all("h3"):
         title_text = h3.get_text(strip=True)
         if not re.match(r"COMITIA\d+", title_text):
             continue
-
-        # h3の後ろのテキストを次のh3まで収集
         block_text = ""
         for sib in h3.next_siblings:
             if getattr(sib, "name", None) == "h3":
                 break
             if hasattr(sib, "get_text"):
                 block_text += sib.get_text(separator=" ")
-
-        # "日程：2026年6月7日（日）" を検索
         date_match = re.search(r"日程[：:]\s*(\d{4})年(\d{1,2})月(\d{1,2})日", block_text)
         if not date_match:
             continue
-
-        # "xxxx" や未定のものはスキップ
         y, m, d = date_match.groups()
-        if not y.isdigit():
+        if not y.isdigit() or "x" in y.lower():
             continue
-
-        venue_match = re.search(r"場所[：:]\s*([^\n　]+)", block_text)
+        venue_match = re.search(r"場所[：:]\s*([^\n　 ]+)", block_text)
         venue = venue_match.group(1).strip()[:40] if venue_match else "東京ビッグサイト"
-
         events.append({
             "title": title_text,
             "date": f"{y}-{int(m):02d}-{int(d):02d}",
@@ -282,13 +289,14 @@ def scrape_comitia():
             "category": "コミティア",
             "source": "comitia"
         })
-
     print(f"[コミティア] {len(events)} events found")
     return events
 
 
 # ─────────────────────────────────────────────
-# 7. 関西コミティア（WordPressサイト）
+# 7. 関西コミティア
+#    構造: h3「創作漫画同人誌展示即売会 『関西コミティア76』」
+#          直後のdl/ul/li に「開催日」「2026年5月17日」が入っている
 # ─────────────────────────────────────────────
 def scrape_k_comitia():
     events = []
@@ -296,35 +304,42 @@ def scrape_k_comitia():
     if not soup:
         return events
 
-    # "開催日程" セクション内の h3 を探す
     for h3 in soup.find_all("h3"):
         title_text = h3.get_text(strip=True)
+        # 「関西コミティア76」などを含むh3を対象に
         if "関西コミティア" not in title_text:
             continue
         if "読書会" in title_text or "出張" in title_text:
             continue
 
-        # h3以降の要素からテキスト収集
+        # h3直後のul/dl全体のテキストを収集（次のh3まで）
         block_text = ""
         for sib in h3.next_siblings:
-            if getattr(sib, "name", None) == "h3":
+            if getattr(sib, "name", None) in ["h2", "h3"]:
                 break
             if hasattr(sib, "get_text"):
                 block_text += sib.get_text(separator="\n")
 
-        # "開催日\n2026年5月17日（日）" パターン
+        # 「開催日\n2026年5月17日」パターン
         date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", block_text)
         if not date_match:
             continue
 
         y, m, d = date_match.groups()
 
-        # 会場: "開催場所\nXXXX" のパターン
-        venue_match = re.search(r"開催場所\s*\n\s*([^\n]+)", block_text)
+        # 「開催場所\nインテックス大阪...」パターン
+        venue_match = re.search(r"開催場所\s*\n+\s*([^\n]+)", block_text)
+        if not venue_match:
+            # フォールバック: 「場所」
+            venue_match = re.search(r"場所\s*\n+\s*([^\n]+)", block_text)
         venue = venue_match.group(1).strip()[:40] if venue_match else "インテックス大阪ほか"
 
+        # タイトルから『』を除去して整形
+        clean_title = re.sub(r"[『』]", "", title_text)
+        clean_title = re.sub(r"創作漫画同人誌展示即売会\s*", "", clean_title).strip()
+
         events.append({
-            "title": title_text,
+            "title": clean_title,
             "date": f"{y}-{int(m):02d}-{int(d):02d}",
             "date_display": f"{y}年{m}月{d}日",
             "venue": venue,
@@ -339,61 +354,43 @@ def scrape_k_comitia():
 
 # ─────────────────────────────────────────────
 # 8. コミックマーケット
-#    サイトがISO-2022-JPのため encoding を明示指定
-#    What'sNewの最新C番号からInfoページURLを構築
+#    C108Info.htmlはISO-2022-JPで完全文字化け
+#    → トップページのテキスト冒頭「2026年8月15日〜16日開催」を取得
 # ─────────────────────────────────────────────
 def scrape_comiket():
     events = []
 
-    # トップページからC番号を取得
-    top_soup = fetch("https://www.comiket.co.jp/", encoding="iso-2022-jp")
-    if not top_soup:
+    # トップページから直接日程テキストを取得
+    raw = fetch_text("https://www.comiket.co.jp/", encoding="iso-2022-jp")
+    if not raw:
         return events
 
-    top_text = top_soup.get_text(separator="\n")
-
-    # What'sNewの C108Info.html などのリンクを探す
-    info_link = top_soup.find("a", href=re.compile(r"/info-a/C\d+/C\d+Info\.html"))
-    if info_link:
-        path = info_link["href"]
-        info_url = "https://www.comiket.co.jp" + path
-    else:
-        # テキストからC番号を推測
-        nums = re.findall(r"C(\d{3})Info", top_text)
-        if not nums:
-            nums = re.findall(r"C(\d{3})", top_text)
-        if nums:
-            latest = max(nums, key=lambda x: int(x))
-            info_url = f"https://www.comiket.co.jp/info-a/C{latest}/C{latest}Info.html"
-        else:
-            print("[コミケ] URLを特定できませんでした")
-            return events
-
-    info_soup = fetch(info_url, encoding="iso-2022-jp")
-    if not info_soup:
-        return events
-
-    info_text = info_soup.get_text(separator="\n")
-
-    # タイトル（「コミックマーケット108」など）
-    title_match = re.search(r"コミックマーケット\s*\d+", info_text)
-    title = title_match.group(0).strip() if title_match else "コミックマーケット"
-
-    # 日程
-    date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", info_text)
+    # 「コミックマーケット１０８は、東京ビッグサイトにて2026年8月15日〜16日開催」
+    # のようなパターンを探す
+    date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日[〜～](\d{1,2})日", raw)
     if not date_match:
-        print(f"[コミケ] 日程が見つかりませんでした ({info_url})")
-        return events
-
-    y, m, d = date_match.groups()
-
-    # 複数日程を探す
-    all_dates = re.findall(r"(\d{1,2})月(\d{1,2})日", info_text)
-    if len(all_dates) >= 2:
-        last = all_dates[-1]
-        date_display = f"{y}年{m}月{d}日〜{last[0]}月{last[1]}日"
-    else:
+        # 単独日付
+        date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", raw)
+        if not date_match:
+            print("[コミケ] 日程テキストが見つかりませんでした")
+            return events
+        y, m, d = date_match.groups()
         date_display = f"{y}年{m}月{d}日"
+    else:
+        y, m, d, d2 = date_match.groups()
+        date_display = f"{y}年{m}月{d}日〜{d2}日"
+
+    # C番号を取得（タイトルや本文から）
+    c_match = re.search(r"コミックマーケット\s*(\d{3})", raw)
+    title = f"コミックマーケット{c_match.group(1)}" if c_match else "コミックマーケット"
+
+    # InfoページのURL構築
+    c_num_match = re.search(r"C(\d{3})Info", raw)
+    if c_num_match:
+        cn = c_num_match.group(1)
+        info_url = f"https://www.comiket.co.jp/info-a/C{cn}/C{cn}Info.html"
+    else:
+        info_url = "https://www.comiket.co.jp/"
 
     events.append({
         "title": title,
@@ -410,7 +407,7 @@ def scrape_comiket():
 
 
 # ─────────────────────────────────────────────
-# 手動追加イベント（docs/manual_events.json）
+# 手動追加イベント
 # ─────────────────────────────────────────────
 def load_manual_events():
     path = "docs/manual_events.json"
