@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-19T13:09:43.554400",
-  "count": 48,
+  "updated_at": "2026-03-19T13:22:32.676891",
+  "count": 49,
   "events": [
     {
       "title": "TOKYO ART BOOK FAIR",
@@ -258,7 +258,7 @@
       "title": "Art Book Osaka 2026",
       "date": "2026-05-30",
       "date_display": "2026年5月30日〜31日",
-      "venue": "〒552-0022",
+      "venue": "シーサイドスタジオCASO（大阪）",
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
@@ -276,7 +276,7 @@
       "title": "COMITIA156",
       "date": "2026-06-07",
       "date_display": "2026年6月7日",
-      "venue": "東京ビッグサイト 東1・2・3・7・8ホール",
+      "venue": "東京ビッグサイト",
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
@@ -381,6 +381,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "コミックマーケット１０８",
+      "date": "2026-08-15",
+      "date_display": "2026年8月15日〜16日",
+      "venue": "東京ビッグサイト",
+      "url": "https://www.comiket.co.jp/info-a/C107/C107Info.html",
+      "category": "コミックマーケット",
+      "source": "comiket"
+    },
+    {
       "title": "ZINEフェス埼玉",
       "date": "2026-08-22",
       "date_display": "2026年8月22日",
@@ -402,7 +411,7 @@
       "title": "COMITIA157",
       "date": "2026-08-23",
       "date_display": "2026年8月23日",
-      "venue": "東京ビッグサイト 西1・2・3・4ホール",
+      "venue": "東京ビッグサイト",
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
@@ -429,7 +438,7 @@
       "title": "COMITIA158",
       "date": "2026-12-13",
       "date_display": "2026年12月13日",
-      "venue": "東京ビッグサイト 西1・2・3・4＋南3ホール",
+      "venue": "東京ビッグサイト",
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
