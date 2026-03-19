@@ -116,6 +116,11 @@
     .badge--bunfree      { background: #c44; color: #fff; }
     .badge--mzfest       { background: #336699; color: #fff; }
     .badge--zinefes_note { background: #447744; color: #fff; }
+    .badge--artbookosaka { background: #884488; color: #fff; }
+    .badge--comitia      { background: #cc6600; color: #fff; }
+    .badge--k_comitia    { background: #cc6600; color: #fff; }
+    .badge--comiket      { background: #333; color: #fff; }
+    .badge--manual       { background: #888; color: #fff; }
 
     .empty { color: #999; font-size: 0.85rem; padding: 1rem 0; }
 
@@ -133,13 +138,15 @@
     <button class="filter-btn active" data-cat="all">ALL</button>
     <button class="filter-btn" data-cat="アートブックフェア">ART BOOK FAIR</button>
     <button class="filter-btn" data-cat="ZINEフェス">ZINE FEST</button>
+    <button class="filter-btn" data-cat="まちのZINEフェス">まちのZINEフェス</button>
     <button class="filter-btn" data-cat="文学フリマ">文学フリマ</button>
+    <button class="filter-btn" data-cat="コミティア">コミティア</button>
+    <button class="filter-btn" data-cat="コミックマーケット">コミケ</button>
   </div>
 
   <div id="calendar"></div>
 
   <script>
-    // events.json を同じリポジトリから読み込む
     fetch('./events.json?t=' + Date.now())
       .then(r => r.json())
       .then(data => init(data))
@@ -151,8 +158,23 @@
     let allEvents = [];
     let currentCat = 'all';
 
+    // 当月の年月プレフィックス（例: "2026-03"）を返す
+    function currentMonthPrefix() {
+      const now = new Date();
+      const y = now.getFullYear();
+      const m = String(now.getMonth() + 1).padStart(2, '0');
+      return y + '-' + m;
+    }
+
     function init(data) {
-      allEvents = data.events || [];
+      const allRaw = data.events || [];
+
+      // 当月以降のみ表示（日付なしは念のため含める）
+      const cutoff = currentMonthPrefix();
+      allEvents = allRaw.filter(function(e) {
+        if (!e.date) return true;
+        return e.date.slice(0, 7) >= cutoff;
+      });
 
       const d = new Date(data.updated_at);
       document.getElementById('updated-at').textContent =
@@ -160,9 +182,11 @@
 
       render();
 
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(function(b) {
+            b.classList.remove('active');
+          });
           btn.classList.add('active');
           currentCat = btn.dataset.cat;
           render();
@@ -174,7 +198,7 @@
       const cal = document.getElementById('calendar');
       const events = currentCat === 'all'
         ? allEvents
-        : allEvents.filter(e => e.category === currentCat);
+        : allEvents.filter(function(e) { return e.category === currentCat; });
 
       if (!events.length) {
         cal.innerHTML = '<p class="empty">該当するイベントがありません。</p>';
@@ -183,32 +207,32 @@
 
       // 月ごとにグループ化
       const grouped = {};
-      events.forEach(e => {
+      events.forEach(function(e) {
         const m = (e.date || '').slice(0, 7) || '未定';
         if (!grouped[m]) grouped[m] = [];
         grouped[m].push(e);
       });
 
-      cal.innerHTML = Object.keys(grouped).sort().map(month => {
-        const [y, m] = month.split('-');
-        const label = month === '未定' ? '未定' : y + '年' + parseInt(m) + '月';
-        const items = grouped[month].map(ev => `
-          <li class="event-item">
-            <span class="event-date">${ev.date_display || ev.date || '未定'}</span>
-            <div>
-              <a class="event-title" href="${ev.url}" target="_blank" rel="noopener">
-                ${ev.title}
-                <span class="badge badge--${ev.source}">${ev.category}</span>
-              </a>
-              <span class="event-venue">📍 ${ev.venue}</span>
-            </div>
-          </li>`).join('');
+      cal.innerHTML = Object.keys(grouped).sort().map(function(month) {
+        const parts = month.split('-');
+        const label = month === '未定' ? '未定' : parts[0] + '年' + parseInt(parts[1]) + '月';
+        const items = grouped[month].map(function(ev) {
+          return '<li class="event-item">' +
+            '<span class="event-date">' + (ev.date_display || ev.date || '未定') + '</span>' +
+            '<div>' +
+              '<a class="event-title" href="' + ev.url + '" target="_blank" rel="noopener">' +
+                ev.title +
+                '<span class="badge badge--' + ev.source + '">' + ev.category + '</span>' +
+              '</a>' +
+              '<span class="event-venue">📍 ' + ev.venue + '</span>' +
+            '</div>' +
+          '</li>';
+        }).join('');
 
-        return `
-          <div class="month-section">
-            <h2 class="month-heading">${label}</h2>
-            <ul class="event-list">${items}</ul>
-          </div>`;
+        return '<div class="month-section">' +
+          '<h2 class="month-heading">' + label + '</h2>' +
+          '<ul class="event-list">' + items + '</ul>' +
+          '</div>';
       }).join('');
     }
   </script>
