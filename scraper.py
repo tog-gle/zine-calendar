@@ -74,67 +74,6 @@ def scrape_tabf():
     return events
 
 
-# ─────────────────────────────────────────────
-# 2. 文学フリマ
-#    /event/ も REST API も403のため、
-#    既知の個別ページURLを直接スクレイピング
-#    + /event/next/ からリンクを収集
-# ─────────────────────────────────────────────
-def scrape_bunfree():
-    events = []
-
-    # まず /event/next/ からリンクを集める（軽量ページ）
-    candidate_urls = set()
-    for seed_url in ["https://bunfree.net/event/next/", "https://bunfree.net/"]:
-        soup = fetch(seed_url)
-        if not soup:
-            continue
-        for a in soup.find_all("a", href=re.compile(r"bunfree\.net/event/[a-z]")):
-            href = a.get("href", "")
-            if href and re.search(r"/event/[a-z]+\d+/?$", href):
-                candidate_urls.add(href.rstrip("/") + "/")
-
-    print(f"[文学フリマ] 候補URL: {len(candidate_urls)}件")
-
-    for url in sorted(candidate_urls)[:20]:
-        soup = fetch(url)
-        if not soup:
-            continue
-        text = soup.get_text(separator="\n")
-
-        # タイトル
-        h1 = soup.find("h1")
-        title = h1.get_text(strip=True) if h1 else ""
-        if not title or "文学フリマ" not in title:
-            continue
-        # 開催終了は除外
-        if "開催終了" in text or "終了しました" in text:
-            continue
-
-        # 日付: "開催 2026年5月4日" or "2026/5/4"
-        date_match = re.search(r"開催\s+(\d{4})年(\d{1,2})月(\d{1,2})日", text)
-        if not date_match:
-            date_match = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", text)
-        if not date_match:
-            continue
-        y, m, d = date_match.groups()
-
-        # 会場
-        venue_match = re.search(r"会場\s+([^\n]+)", text)
-        venue = venue_match.group(1).strip()[:40] if venue_match else "各地会場"
-
-        events.append({
-            "title": title,
-            "date": f"{y}-{int(m):02d}-{int(d):02d}",
-            "date_display": f"{y}年{m}月{d}日",
-            "venue": venue,
-            "url": url,
-            "category": "文学フリマ",
-            "source": "bunfree"
-        })
-
-    print(f"[文学フリマ] {len(events)} events found")
-    return events
 
 
 # ─────────────────────────────────────────────
@@ -430,6 +369,125 @@ def load_manual_events():
 
 
 # ─────────────────────────────────────────────
+# ─────────────────────────────────────────────
+# 技術書典
+# ─────────────────────────────────────────────
+def scrape_techbookfest():
+    events = []
+    soup = fetch("https://blog.techbookfest.org/")
+    if not soup:
+        return events
+
+    text = soup.get_text(separator="\n")
+
+    offline_match = re.search(
+        r"(技術書典\d+)[\s\S]{0,50}?オフライン開催[\s\S]{0,100}?〈会期〉\s*(\d{4})年(\d{1,2})月(\d{1,2})日",
+        text
+    )
+    online_match = re.search(
+        r"(技術書典\d+)[\s\S]{0,50}?オンライン開催[\s\S]{0,100}?〈会期〉\s*(\d{4})年(\d{1,2})月(\d{1,2})日[^\n]{0,20}[〜～](\d{1,2})月(\d{1,2})日",
+        text
+    )
+
+    venue_match = re.search(r"〈会場〉([^\n]+)", text)
+    venue = venue_match.group(1).strip()[:40] if venue_match else "池袋サンシャインシティ"
+
+    url_match = re.search(r"https://techbookfest\.org/event/tbf\d+", text)
+    url = url_match.group(0) if url_match else "https://techbookfest.org/"
+
+    if offline_match:
+        title = offline_match.group(1)
+        y, m, d = offline_match.group(2), offline_match.group(3), offline_match.group(4)
+        events.append({
+            "title": f"{title}（オフライン）",
+            "date": f"{y}-{int(m):02d}-{int(d):02d}",
+            "date_display": f"{y}年{m}月{d}日",
+            "venue": venue,
+            "url": url,
+            "category": "技術書典",
+            "source": "techbookfest"
+        })
+
+    if online_match:
+        title = online_match.group(1)
+        y, m1, d1, m2, d2 = (
+            online_match.group(2), online_match.group(3), online_match.group(4),
+            online_match.group(5), online_match.group(6)
+        )
+        events.append({
+            "title": f"{title}（オンライン）",
+            "date": f"{y}-{int(m1):02d}-{int(d1):02d}",
+            "date_display": f"{y}年{m1}月{d1}日〜{m2}月{d2}日",
+            "venue": "技術書典オンラインマーケット",
+            "url": url,
+            "category": "技術書典",
+            "source": "techbookfest"
+        })
+
+    print(f"[技術書典] {len(events)} events found")
+    return events
+# ─────────────────────────────────────────────
+def scrape_techbookfest():
+    events = []
+    soup = fetch("https://blog.techbookfest.org/")
+    if not soup:
+        return events
+
+    text = soup.get_text(separator="\n")
+
+    # 「技術書典XX オフライン開催 〈会期〉2026年4月12日(日)」パターン
+    offline_match = re.search(
+        r"(技術書典\d+)[\s\S]{0,50}?オフライン開催[\s\S]{0,100}?〈会期〉\s*(\d{4})年(\d{1,2})月(\d{1,2})日",
+        text
+    )
+    # 「技術書典XX オンライン開催 〈会期〉2026年4月11日(土) ～ 4月26日(日)」パターン
+    online_match = re.search(
+        r"(技術書典\d+)[\s\S]{0,50}?オンライン開催[\s\S]{0,100}?〈会期〉\s*(\d{4})年(\d{1,2})月(\d{1,2})日[^\n]{0,20}[〜～](\d{1,2})月(\d{1,2})日",
+        text
+    )
+
+    # 会場（オフライン）
+    venue_match = re.search(r"〈会場〉([^\n]+)", text)
+    venue = venue_match.group(1).strip()[:40] if venue_match else "池袋サンシャインシティ"
+
+    # イベントページURL
+    url_match = re.search(r"https://techbookfest\.org/event/tbf\d+", text)
+    url = url_match.group(0) if url_match else "https://techbookfest.org/"
+
+    if offline_match:
+        title = offline_match.group(1)
+        y, m, d = offline_match.group(2), offline_match.group(3), offline_match.group(4)
+        events.append({
+            "title": f"{title}（オフライン）",
+            "date": f"{y}-{int(m):02d}-{int(d):02d}",
+            "date_display": f"{y}年{m}月{d}日",
+            "venue": venue,
+            "url": url,
+            "category": "技術書典",
+            "source": "techbookfest"
+        })
+
+    if online_match:
+        title = online_match.group(1)
+        y, m1, d1, m2, d2 = (
+            online_match.group(2), online_match.group(3), online_match.group(4),
+            online_match.group(5), online_match.group(6)
+        )
+        events.append({
+            "title": f"{title}（オンライン）",
+            "date": f"{y}-{int(m1):02d}-{int(d1):02d}",
+            "date_display": f"{y}年{m1}月{d1}日〜{m2}月{d2}日",
+            "venue": "技術書典オンラインマーケット",
+            "url": url,
+            "category": "技術書典",
+            "source": "techbookfest"
+        })
+
+    print(f"[技術書典] {len(events)} events found")
+    return events
+
+
+# ─────────────────────────────────────────────
 # GAS自動追加の文フリイベントを読み込む
 # ─────────────────────────────────────────────
 def load_bunfree_events():
@@ -453,13 +511,13 @@ def load_bunfree_events():
 def run_all():
     all_events = []
     all_events += scrape_tabf()
-    all_events += scrape_bunfree()
     all_events += scrape_mzfest()
     all_events += scrape_zinefes_note()
     all_events += scrape_artbookosaka()
     all_events += scrape_comitia()
     all_events += scrape_k_comitia()
     all_events += scrape_comiket()
+    all_events += scrape_techbookfest()
     all_events += load_manual_events()   # 手動イベント（ZINEの商店街など）
     all_events += load_bunfree_events()  # GAS自動追加の文フリイベント
 
