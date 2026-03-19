@@ -4,17 +4,71 @@
     "date": "2026-04-18",
     "date_display": "2026年4月18日",
     "venue": "DIY BOOKS",
-    "url": "https://www.instagram.com/p/DWD6CTNgTAp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+    "url": "https://www.instagram.com/p/DWD6CTNgTAp/",
     "category": "DIY BOOKS",
     "source": "manual"
   },
   {
-    "title": "Oui,ZINE8",
-    "date": "2026-04-18",
-    "date_display": "2026年4月18日",
-    "venue": "DIY BOOKS",
-    "url": "https://diybooks.jp",
-    "category": "DIY BOOKS",
+    "title": "文学フリマ東京42",
+    "date": "2026-05-04",
+    "date_display": "2026年5月4日",
+    "venue": "東京ビッグサイト",
+    "url": "https://bunfree.net/event/tokyo42/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ岩手11",
+    "date": "2026-06-21",
+    "date_display": "2026年6月21日",
+    "venue": "岩手県産業会館",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ札幌11",
+    "date": "2026-07-20",
+    "date_display": "2026年7月20日",
+    "venue": "札幌市内会場",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ香川3",
+    "date": "2026-08-02",
+    "date_display": "2026年8月2日",
+    "venue": "香川県内会場",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ大阪14",
+    "date": "2026-09-13",
+    "date_display": "2026年9月13日",
+    "venue": "大阪市内会場",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ福岡12",
+    "date": "2026-10-04",
+    "date_display": "2026年10月4日",
+    "venue": "福岡市内会場",
+    "url": "https://bunfree.net/event/",
+    "category": "文学フリマ",
+    "source": "manual"
+  },
+  {
+    "title": "文学フリマ東京43",
+    "date": "2026-11-08",
+    "date_display": "2026年11月8日",
+    "venue": "東京ビッグサイト",
+    "url": "https://bunfree.net/event/tokyo43/",
+    "category": "文学フリマ",
     "source": "manual"
   }
 ]
