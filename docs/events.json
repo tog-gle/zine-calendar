@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-19T14:33:20.369441",
-  "count": 68,
+  "updated_at": "2026-03-23T02:05:07.694209",
+  "count": 67,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -91,15 +91,6 @@
       "url": "https://bunfree.net/event/hiroshima08/",
       "category": "文学フリマ",
       "source": "bunfree_auto"
-    },
-    {
-      "title": "TOKYO ART BOOK FAIR",
-      "date": "2025-12-11",
-      "date_display": "2025年12月11日〜11月20日",
-      "venue": "東京都現代美術館 企画展示室B2F、エントランスホール ほか",
-      "url": "https://tokyoartbookfair.com/",
-      "category": "アートブックフェア",
-      "source": "tabf"
     },
     {
       "title": "まちのZINEフェス 神戸ふたば",
