@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-23T02:05:07.694209",
-  "count": 67,
+  "updated_at": "2026-03-26T02:08:50.938087",
+  "count": 71,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -538,7 +538,7 @@
       "date": "2026-08-15",
       "date_display": "2026年8月15日〜16日",
       "venue": "東京ビッグサイト",
-      "url": "https://www.comiket.co.jp/info-a/C107/C107Info.html",
+      "url": "https://www.comiket.co.jp/info-a/C108/C108Info.html",
       "category": "コミックマーケット",
       "source": "comiket"
     },
@@ -579,6 +579,24 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEフェス動物",
+      "date": "2026-09-05",
+      "date_display": "2026年9月5日",
+      "venue": "動物",
+      "url": "https://note.com/bookcultureclub/n/n4754869b787a",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス山梨",
+      "date": "2026-09-06",
+      "date_display": "2026年9月6日",
+      "venue": "山梨",
+      "url": "https://note.com/bookcultureclub/n/n4754869b787a",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "関西コミティア77",
       "date": "2026-10-18",
       "date_display": "2026年10月18日",
@@ -586,6 +604,24 @@
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
+    },
+    {
+      "title": "ZINEフェス長野",
+      "date": "2026-11-15",
+      "date_display": "2026年11月15日",
+      "venue": "長野",
+      "url": "https://note.com/bookcultureclub/n/nade821ca5ec7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス茅ヶ崎",
+      "date": "2026-11-21",
+      "date_display": "2026年11月21日",
+      "venue": "茅ヶ崎",
+      "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス高知",
