@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-03-30T02:22:38.991939",
-  "count": 71,
+  "updated_at": "2026-04-02T02:06:39.941922",
+  "count": 64,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -129,24 +129,6 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "ZINEフェス仙台",
-      "date": "2026-02-28",
-      "date_display": "2026年2月28日",
-      "venue": "仙台",
-      "url": "https://note.com/bookcultureclub/n/n4657e4bd64bf",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス神戸",
-      "date": "2026-03-01",
-      "date_display": "2026年3月1日",
-      "venue": "神戸",
-      "url": "https://note.com/bookcultureclub/n/ne6630b2b5fa8",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "文学フリマ福岡12",
       "date": "2026-03-06",
       "date_display": "2026年3月6日",
@@ -156,15 +138,6 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "ZINEフェス東京",
-      "date": "2026-03-08",
-      "date_display": "2026年3月8日",
-      "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/nb42b348d931f",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "まちのZINEフェス 3.14/15 甲東ホール",
       "date": "2026-03-14",
       "date_display": "2026年3月14日",
@@ -172,42 +145,6 @@
       "url": "https://mzfest.3zui.jp/koutou",
       "category": "まちのZINEフェス",
       "source": "mzfest"
-    },
-    {
-      "title": "ZINEフェス長崎",
-      "date": "2026-03-14",
-      "date_display": "2026年3月14日",
-      "venue": "長崎",
-      "url": "https://note.com/bookcultureclub/n/n7a1027aa613d",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス長野（出展受付終了）",
-      "date": "2026-03-20",
-      "date_display": "2026年3月20日",
-      "venue": "長野",
-      "url": "https://note.com/bookcultureclub/n/n58904ee8ad32",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス茅ヶ崎（出展受付終了）",
-      "date": "2026-03-22",
-      "date_display": "2026年3月22日",
-      "venue": "茅ヶ崎",
-      "url": "https://note.com/bookcultureclub/n/n2d6114502fb8",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス吉祥寺（出展受付終了）",
-      "date": "2026-03-28",
-      "date_display": "2026年3月28日",
-      "venue": "吉祥寺",
-      "url": "https://note.com/bookcultureclub/n/n6ead299d5947",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス静岡",
@@ -583,7 +520,7 @@
       "date": "2026-09-05",
       "date_display": "2026年9月5日",
       "venue": "動物",
-      "url": "https://note.com/bookcultureclub/n/n4754869b787a",
+      "url": "https://note.com/bookcultureclub/n/n0146fb119b52",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
