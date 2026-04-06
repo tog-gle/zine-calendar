@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-02T02:06:39.941922",
-  "count": 64,
+  "updated_at": "2026-04-06T02:23:25.122504",
+  "count": 63,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -138,7 +138,7 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "まちのZINEフェス 3.14/15 甲東ホール",
+      "title": "まちのZINEフェス 甲東ホール",
       "date": "2026-03-14",
       "date_display": "2026年3月14日",
       "venue": "西宮市 甲東ホール 〒662-0812 兵庫県西宮市甲東園3丁目2-29 アプリ甲東 4階　入場無料",
@@ -424,15 +424,6 @@
       "url": "https://note.com/bookcultureclub/n/n5f2f337602df",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "まちのZINEフェス 7/19.20 神戸ふたば",
-      "date": "2026-07-19",
-      "date_display": "2026年7月19日",
-      "venue": "ふたば学舎 神戸市長田区二葉町7-1-18 入場無料",
-      "url": "https://mzfest.3zui.jp/kobefutabasummer26",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス奈良",
