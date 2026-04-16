@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-13T02:31:58.700292",
-  "count": 66,
+  "updated_at": "2026-04-16T02:30:52.830122",
+  "count": 67,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -487,6 +487,15 @@
       "url": "https://www.comiket.co.jp/info-a/C108/C108Info.html",
       "category": "コミックマーケット",
       "source": "comiket"
+    },
+    {
+      "title": "まちのZINEフェス 8/22 23 長岡京バンビオ",
+      "date": "2026-08-22",
+      "date_display": "2026年8月22日",
+      "venue": "長岡京市中央生涯学習センター 〒617-0833 京都府長岡京市神足2丁目3番1号 バンビオ1番館内",
+      "url": "https://mzfest.3zui.jp/nagaokakyo",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス埼玉",
