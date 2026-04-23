@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-20T02:32:04.695420",
-  "count": 67,
+  "updated_at": "2026-04-23T02:29:19.689480",
+  "count": 64,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -147,42 +147,6 @@
       "source": "mzfest"
     },
     {
-      "title": "ZINEフェス静岡",
-      "date": "2026-04-04",
-      "date_display": "2026年4月4日",
-      "venue": "静岡",
-      "url": "https://note.com/bookcultureclub/n/n6b73427e25a1",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス札幌",
-      "date": "2026-04-05",
-      "date_display": "2026年4月5日",
-      "venue": "札幌",
-      "url": "https://note.com/bookcultureclub/n/n1be74c0b0949",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス岩手",
-      "date": "2026-04-11",
-      "date_display": "2026年4月11日",
-      "venue": "岩手",
-      "url": "https://note.com/bookcultureclub/n/n0e1241a546bb",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス大阪（出展受付終了）",
-      "date": "2026-04-12",
-      "date_display": "2026年4月12日",
-      "venue": "大阪",
-      "url": "https://note.com/bookcultureclub/n/nfd75a0e8c9f6",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "技術書典20（オフライン）",
       "date": "2026-04-12",
       "date_display": "2026年4月12日",
@@ -201,15 +165,6 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "ZINEフェス広島",
-      "date": "2026-04-18",
-      "date_display": "2026年4月18日",
-      "venue": "広島",
-      "url": "https://note.com/bookcultureclub/n/n491adfe116c1",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "ZINEの商店街",
       "date": "2026-04-18",
       "date_display": "2026年4月18日",
@@ -226,15 +181,6 @@
       "url": "https://diybooks.jp",
       "category": "DIY BOOKS",
       "source": "manual"
-    },
-    {
-      "title": "ZINEフェス福岡",
-      "date": "2026-04-19",
-      "date_display": "2026年4月19日",
-      "venue": "福岡",
-      "url": "https://note.com/bookcultureclub/n/ndad992be0cf3",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "文学フリマ札幌11",
@@ -561,6 +507,24 @@
       "source": "k_comitia"
     },
     {
+      "title": "ZINEフェス福岡",
+      "date": "2026-10-31",
+      "date_display": "2026年10月31日",
+      "venue": "福岡",
+      "url": "https://note.com/bookcultureclub/n/ndf606a783dcb",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス広島",
+      "date": "2026-11-01",
+      "date_display": "2026年11月1日",
+      "venue": "広島",
+      "url": "https://note.com/bookcultureclub/n/n8b94085e2d29",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "ZINEフェス静岡",
       "date": "2026-11-14",
       "date_display": "2026年11月14日",
@@ -604,6 +568,15 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "関西コミティア78",
+      "date": "2027-01-24",
+      "date_display": "2027年1月24日",
+      "venue": "インテックス大阪 2号館",
+      "url": "https://www.k-comitia.com/",
+      "category": "コミティア",
+      "source": "k_comitia"
     }
   ]
 }
