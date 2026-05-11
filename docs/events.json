@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-07T02:41:49.314699",
-  "count": 65,
+  "updated_at": "2026-05-11T02:55:28.833839",
+  "count": 62,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -93,24 +93,6 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "まちのZINEフェス 26.01.10-12 神戸ふたば",
-      "date": "2026-01-10",
-      "date_display": "2026年1月10日",
-      "venue": "ふたば学舎 神戸市長田区二葉町7-1-18　入場無料　主催：Sanzui　共催：NPO法人ふたば",
-      "url": "https://mzfest.3zui.jp/kobefutaba",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
-    },
-    {
-      "title": "まちのZINEフェス 26.02/07 大東アクロス",
-      "date": "2026-02-07",
-      "date_display": "2026年2月7日",
-      "venue": "大東市立生涯学習センターアクロス 大阪府大東市末広町1-301",
-      "url": "https://mzfest.3zui.jp/daitou",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
-    },
-    {
       "title": "文学フリマ大阪14",
       "date": "2026-02-13",
       "date_display": "2026年2月13日",
@@ -136,15 +118,6 @@
       "url": "https://bunfree.net/event/fukuoka12/",
       "category": "文学フリマ",
       "source": "bunfree_auto"
-    },
-    {
-      "title": "まちのZINEフェス 26.03/13.14 甲東ホール",
-      "date": "2026-03-14",
-      "date_display": "2026年3月14日",
-      "venue": "西宮市 甲東ホール 〒662-0812 兵庫県西宮市甲東園3丁目2-29 アプリ甲東 4階　入場無料",
-      "url": "https://mzfest.3zui.jp/koutou",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "技術書典20（オフライン）",
