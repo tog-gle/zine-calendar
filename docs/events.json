@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-14T02:55:16.175469",
+  "updated_at": "2026-05-18T03:30:28.346484",
   "count": 61,
   "events": [
     {
@@ -237,15 +237,6 @@
       "source": "zinefes_note"
     },
     {
-      "title": "関西コミティア76",
-      "date": "2026-05-17",
-      "date_display": "2026年5月17日",
-      "venue": "インテックス大阪",
-      "url": "https://www.k-comitia.com/",
-      "category": "コミティア",
-      "source": "k_comitia"
-    },
-    {
       "title": "ZINEフェス東京",
       "date": "2026-05-23",
       "date_display": "2026年5月23日",
@@ -262,6 +253,15 @@
       "url": "https://note.com/bookcultureclub/n/n267fefdc6350",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "Art Book Osaka 2026",
+      "date": "2026-05-30",
+      "date_display": "2026年5月30日〜31日",
+      "venue": "シーサイドスタジオCASO（大阪）",
+      "url": "https://artbookosaka.com/",
+      "category": "アートブックフェア",
+      "source": "artbookosaka"
     },
     {
       "title": "ZINEフェス鹿児島",
