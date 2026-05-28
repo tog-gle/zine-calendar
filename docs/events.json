@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-25T03:37:09.538263",
-  "count": 57,
+  "updated_at": "2026-05-28T02:55:39.298813",
+  "count": 52,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -183,33 +183,6 @@
       "source": "k_comitia"
     },
     {
-      "title": "ZINEフェス東京",
-      "date": "2026-05-23",
-      "date_display": "2026年5月23日",
-      "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/na5029f005cad",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス福島",
-      "date": "2026-05-24",
-      "date_display": "2026年5月24日",
-      "venue": "福島",
-      "url": "https://note.com/bookcultureclub/n/n267fefdc6350",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "Art Book Osaka 2026",
-      "date": "2026-05-30",
-      "date_display": "2026年5月30日〜31日",
-      "venue": "シーサイドスタジオCASO（大阪）",
-      "url": "https://artbookosaka.com/",
-      "category": "アートブックフェア",
-      "source": "artbookosaka"
-    },
-    {
       "title": "ZINEフェス鹿児島",
       "date": "2026-05-31",
       "date_display": "2026年5月31日",
@@ -291,15 +264,6 @@
       "source": "zinefes_note"
     },
     {
-      "title": "まちのZINEフェス 7/19.20 神戸ふたば",
-      "date": "2026-07-19",
-      "date_display": "2026年7月19日",
-      "venue": "ふたば学舎 神戸市長田区二葉町7-1-18 入場無料",
-      "url": "https://mzfest.3zui.jp/kobefutabasummer26",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
-    },
-    {
       "title": "ZINEフェス奈良",
       "date": "2026-07-19",
       "date_display": "2026年7月19日",
@@ -343,15 +307,6 @@
       "url": "https://www.comiket.co.jp/info-a/C108/C108Info.html",
       "category": "コミックマーケット",
       "source": "comiket"
-    },
-    {
-      "title": "まちのZINEフェス 8/22 23 長岡京バンビオ",
-      "date": "2026-08-22",
-      "date_display": "2026年8月22日",
-      "venue": "長岡京市中央生涯学習センター 〒617-0833 京都府長岡京市神足2丁目3番1号 バンビオ1番館内",
-      "url": "https://mzfest.3zui.jp/nagaokakyo",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス埼玉",
