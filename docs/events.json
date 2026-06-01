@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-28T02:55:39.298813",
-  "count": 52,
+  "updated_at": "2026-06-01T03:51:29.765921",
+  "count": 56,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -183,6 +183,15 @@
       "source": "k_comitia"
     },
     {
+      "title": "Art Book Osaka 2026",
+      "date": "2026-05-30",
+      "date_display": "2026年5月30日〜31日",
+      "venue": "シーサイドスタジオCASO（大阪）",
+      "url": "https://artbookosaka.com/",
+      "category": "アートブックフェア",
+      "source": "artbookosaka"
+    },
+    {
       "title": "ZINEフェス鹿児島",
       "date": "2026-05-31",
       "date_display": "2026年5月31日",
@@ -363,6 +372,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEフェス東京",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日",
+      "venue": "東京",
+      "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "ZINEフェス京都",
       "date": "2026-09-27",
       "date_display": "2026年9月27日",
@@ -404,6 +422,15 @@
       "date_display": "2026年11月1日",
       "venue": "広島",
       "url": "https://note.com/bookcultureclub/n/n8b94085e2d29",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス神戸",
+      "date": "2026-11-03",
+      "date_display": "2026年11月3日",
+      "venue": "神戸",
+      "url": "https://note.com/bookcultureclub/n/n25a69a965fb5",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
@@ -469,6 +496,15 @@
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
+    },
+    {
+      "title": "COMITIA159",
+      "date": "2027-03-14",
+      "date_display": "2027年3月14日",
+      "venue": "東京ビッグサイト",
+      "url": "https://www.comitia.co.jp/html/schedule.html",
+      "category": "コミティア",
+      "source": "comitia"
     }
   ]
 }
