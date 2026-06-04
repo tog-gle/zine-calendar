@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-01T03:51:29.765921",
-  "count": 56,
+  "updated_at": "2026-06-04T03:47:56.154554",
+  "count": 57,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -233,6 +233,15 @@
       "date_display": "2026年6月27日",
       "venue": "旅と食EAST",
       "url": "https://note.com/bookcultureclub/n/nca466e18bd40",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス仙台",
+      "date": "2026-06-28",
+      "date_display": "2026年6月28日",
+      "venue": "仙台",
+      "url": "https://note.com/bookcultureclub/n/n5b1c7b0b9d8f",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
