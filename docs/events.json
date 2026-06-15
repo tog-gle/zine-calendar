@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-11T03:43:45.643316",
-  "count": 27,
+  "updated_at": "2026-06-15T04:03:49.179834",
+  "count": 57,
   "events": [
     {
       "title": "文学フリマ京都9",
@@ -192,6 +192,123 @@
       "source": "artbookosaka"
     },
     {
+      "title": "ZINEフェス鹿児島",
+      "date": "2026-05-31",
+      "date_display": "2026年5月31日",
+      "venue": "鹿児島",
+      "url": "https://note.com/bookcultureclub/n/nd3286b94ebce",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス旅と食WEST",
+      "date": "2026-06-20",
+      "date_display": "2026年6月20日",
+      "venue": "旅と食WEST",
+      "url": "https://note.com/bookcultureclub/n/nc78f1d85cc4b",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス沖縄",
+      "date": "2026-06-21",
+      "date_display": "2026年6月21日",
+      "venue": "沖縄",
+      "url": "https://note.com/bookcultureclub/n/n1b55194a83ee",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス旅と食EAST",
+      "date": "2026-06-27",
+      "date_display": "2026年6月27日",
+      "venue": "旅と食EAST",
+      "url": "https://note.com/bookcultureclub/n/nca466e18bd40",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス仙台",
+      "date": "2026-06-28",
+      "date_display": "2026年6月28日",
+      "venue": "仙台",
+      "url": "https://note.com/bookcultureclub/n/n5b1c7b0b9d8f",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス栃木",
+      "date": "2026-07-04",
+      "date_display": "2026年7月4日",
+      "venue": "栃木",
+      "url": "https://note.com/bookcultureclub/n/nc12af8461c6f",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス金沢",
+      "date": "2026-07-05",
+      "date_display": "2026年7月5日",
+      "venue": "金沢",
+      "url": "https://note.com/bookcultureclub/n/nbc44f21db4d5",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス東京",
+      "date": "2026-07-11",
+      "date_display": "2026年7月11日",
+      "venue": "東京",
+      "url": "https://note.com/bookcultureclub/n/n053a24287fc2",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス秋田",
+      "date": "2026-07-18",
+      "date_display": "2026年7月18日",
+      "venue": "秋田",
+      "url": "https://note.com/bookcultureclub/n/n5f2f337602df",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス奈良",
+      "date": "2026-07-19",
+      "date_display": "2026年7月19日",
+      "venue": "奈良",
+      "url": "https://note.com/bookcultureclub/n/n886e0b425edf",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス松山",
+      "date": "2026-07-20",
+      "date_display": "2026年7月20日",
+      "venue": "松山",
+      "url": "https://note.com/bookcultureclub/n/ne10e6fa065ba",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス写真",
+      "date": "2026-08-02",
+      "date_display": "2026年8月2日",
+      "venue": "写真",
+      "url": "https://note.com/bookcultureclub/n/naf5763ab74a7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス文芸・詩歌と日記・",
+      "date": "2026-08-02",
+      "date_display": "2026年8月2日",
+      "venue": "文芸・詩歌と日記・",
+      "url": "https://note.com/bookcultureclub/n/n77dd4363d56d",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "コミックマーケット１０８",
       "date": "2026-08-15",
       "date_display": "2026年8月15日〜16日",
@@ -199,6 +316,24 @@
       "url": "https://www.comiket.co.jp/info-a/C108/C108Info.html",
       "category": "コミックマーケット",
       "source": "comiket"
+    },
+    {
+      "title": "ZINEフェス埼玉",
+      "date": "2026-08-22",
+      "date_display": "2026年8月22日",
+      "venue": "埼玉",
+      "url": "https://note.com/bookcultureclub/n/nfdd1a4ab0c05",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス新潟",
+      "date": "2026-08-23",
+      "date_display": "2026年8月23日",
+      "venue": "新潟",
+      "url": "https://note.com/bookcultureclub/n/n7db9410d0bb8",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "COMITIA157",
@@ -210,6 +345,69 @@
       "source": "comitia"
     },
     {
+      "title": "ZINEフェス茨城",
+      "date": "2026-08-29",
+      "date_display": "2026年8月29日",
+      "venue": "茨城",
+      "url": "https://note.com/bookcultureclub/n/n4e5e795f67f7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス動物",
+      "date": "2026-09-05",
+      "date_display": "2026年9月5日",
+      "venue": "動物",
+      "url": "https://note.com/bookcultureclub/n/n0146fb119b52",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス山梨",
+      "date": "2026-09-06",
+      "date_display": "2026年9月6日",
+      "venue": "山梨",
+      "url": "https://note.com/bookcultureclub/n/n4754869b787a",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス東京",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日",
+      "venue": "東京",
+      "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス京都",
+      "date": "2026-09-27",
+      "date_display": "2026年9月27日",
+      "venue": "京都",
+      "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス熊本",
+      "date": "2026-10-10",
+      "date_display": "2026年10月10日",
+      "venue": "熊本",
+      "url": "https://note.com/bookcultureclub/n/nfae1d4e6e76a?app_launch=false",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス文芸・大阪・",
+      "date": "2026-10-12",
+      "date_display": "2026年10月12日",
+      "venue": "文芸・大阪・",
+      "url": "https://note.com/bookcultureclub/n/n844b49114c2a?app_launch=false",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "関西コミティア77",
       "date": "2026-10-18",
       "date_display": "2026年10月18日",
@@ -217,6 +415,78 @@
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
+    },
+    {
+      "title": "ZINEフェス福岡",
+      "date": "2026-10-31",
+      "date_display": "2026年10月31日",
+      "venue": "福岡",
+      "url": "https://note.com/bookcultureclub/n/ndf606a783dcb",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス広島",
+      "date": "2026-11-01",
+      "date_display": "2026年11月1日",
+      "venue": "広島",
+      "url": "https://note.com/bookcultureclub/n/n8b94085e2d29",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス神戸",
+      "date": "2026-11-03",
+      "date_display": "2026年11月3日",
+      "venue": "神戸",
+      "url": "https://note.com/bookcultureclub/n/n25a69a965fb5",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス静岡",
+      "date": "2026-11-14",
+      "date_display": "2026年11月14日",
+      "venue": "静岡",
+      "url": "https://note.com/bookcultureclub/n/n4a2a93789b5b",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス長野",
+      "date": "2026-11-15",
+      "date_display": "2026年11月15日",
+      "venue": "長野",
+      "url": "https://note.com/bookcultureclub/n/nade821ca5ec7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス茅ヶ崎",
+      "date": "2026-11-21",
+      "date_display": "2026年11月21日",
+      "venue": "茅ヶ崎",
+      "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス高知",
+      "date": "2026-11-29",
+      "date_display": "2026年11月29日",
+      "venue": "高知",
+      "url": "https://note.com/bookcultureclub/n/n300c680b84a6",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス長崎",
+      "date": "2026-12-12",
+      "date_display": "2026年12月12日",
+      "venue": "長崎",
+      "url": "https://note.com/bookcultureclub/n/n104176a23abd",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "COMITIA158",
