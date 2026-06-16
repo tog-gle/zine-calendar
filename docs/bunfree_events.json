@@ -3,54 +3,63 @@
     "title": "文学フリマ岩手11",
     "date": "2026-06-21",
     "date_display": "2026年6月21日",
-    "venue": "岩手県産業会館（サンビル） 7F大ホール（岩手県盛岡市）",
+    "venue": "岩手県産業会館 7F大ホール (岩手県盛岡市)",
     "url": "https://bunfree.net/event/iwate11/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
   },
   {
     "title": "文学フリマ札幌11",
     "date": "2026-07-20",
     "date_display": "2026年7月20日",
-    "venue": "札幌コンベンションセンター 大ホール（札幌市白石区）",
+    "venue": "札幌コンベンションセンター 大ホール (札幌市白石区)",
     "url": "https://bunfree.net/event/sapporo11/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
   },
   {
     "title": "文学フリマ香川3",
     "date": "2026-08-02",
     "date_display": "2026年8月2日",
-    "venue": "サンポート高松シンボルタワー展示場＋コミュニケーションプラザ（香川県高松市）",
+    "venue": "サンポート高松シンボルタワー展示場 +コミュニケーションプラザ(香川県高松市)",
     "url": "https://bunfree.net/event/kagawa03/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
   },
   {
     "title": "文学フリマ大阪14",
     "date": "2026-09-13",
     "date_display": "2026年9月13日",
-    "venue": "インテックス大阪（大阪市住之江区）",
+    "venue": "インテックス大阪 2号館 (大阪市住之江区)",
     "url": "https://bunfree.net/event/osaka14/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
   },
   {
     "title": "文学フリマ福岡12",
     "date": "2026-10-04",
     "date_display": "2026年10月4日",
-    "venue": "博多国際展示場＆カンファレンスセンター 3F（福岡市博多区）",
+    "venue": "博多国際展示場&カンファレンスセンター 3F (福岡市博多区)",
     "url": "https://bunfree.net/event/fukuoka12/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
   },
   {
     "title": "文学フリマ東京43",
     "date": "2026-11-08",
     "date_display": "2026年11月8日",
-    "venue": "東京ビッグサイト 南ホール（東京都江東区有明）",
+    "venue": "東京ビッグサイト 南1-4ホール（東京都江東区有明）",
     "url": "https://bunfree.net/event/tokyo43/",
     "category": "文学フリマ",
-    "source": "bunfree_manual"
+    "source": "bunfree_auto"
+  },
+  {
+    "title": "文学フリマ京都11",
+    "date": "2027-01-17",
+    "date_display": "2027年1月17日",
+    "venue": "京都市勧業館「みやこめっせ」1F 第二展示場・3F 第三展示場（京都市左京区）",
+    "url": "https://bunfree.net/event/kyoto11/",
+    "category": "文学フリマ",
+    "source": "bunfree_auto"
   }
 ]
