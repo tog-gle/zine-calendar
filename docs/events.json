@@ -1,16 +1,7 @@
 {
-  "updated_at": "2026-06-18T03:42:18.329573",
-  "count": 48,
+  "updated_at": "2026-06-22T04:00:29.849523",
+  "count": 47,
   "events": [
-    {
-      "title": "技術書典20（オフライン）",
-      "date": "2026-04-12",
-      "date_display": "2026年4月12日",
-      "venue": "池袋サンシャインシティ 展示ホールD（文化会館ビル2F）",
-      "url": "https://techbookfest.org/",
-      "category": "技術書典",
-      "source": "techbookfest"
-    },
     {
       "title": "ZINEの商店街",
       "date": "2026-04-18",
@@ -73,15 +64,6 @@
       "url": "https://note.com/bookcultureclub/n/n1b55194a83ee",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "文学フリマ岩手11",
-      "date": "2026-06-21",
-      "date_display": "2026年6月21日",
-      "venue": "岩手県産業会館 7F大ホール (岩手県盛岡市)",
-      "url": "https://bunfree.net/event/iwate11/",
-      "category": "文学フリマ",
-      "source": "bunfree_auto"
     },
     {
       "title": "ZINEフェス旅と食EAST",
@@ -379,6 +361,15 @@
       "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "技術書典21（オフライン）",
+      "date": "2026-11-23",
+      "date_display": "2026年11月23日",
+      "venue": "池袋サンシャインシティ 展示ホールD（文化会館ビル2F）",
+      "url": "https://techbookfest.org/",
+      "category": "技術書典",
+      "source": "techbookfest"
     },
     {
       "title": "ZINEフェス高知",
