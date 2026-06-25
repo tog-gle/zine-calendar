@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-22T04:00:29.849523",
-  "count": 47,
+  "updated_at": "2026-06-25T02:58:16.382886",
+  "count": 44,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -37,33 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス鹿児島",
-      "date": "2026-05-31",
-      "date_display": "2026年5月31日",
-      "venue": "鹿児島",
-      "url": "https://note.com/bookcultureclub/n/nd3286b94ebce",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス旅と食WEST",
-      "date": "2026-06-20",
-      "date_display": "2026年6月20日",
-      "venue": "旅と食WEST",
-      "url": "https://note.com/bookcultureclub/n/nc78f1d85cc4b",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス沖縄",
-      "date": "2026-06-21",
-      "date_display": "2026年6月21日",
-      "venue": "沖縄",
-      "url": "https://note.com/bookcultureclub/n/n1b55194a83ee",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス旅と食EAST",
