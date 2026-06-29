@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-25T02:58:16.382886",
-  "count": 44,
+  "updated_at": "2026-06-29T03:40:26.922830",
+  "count": 43,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -37,24 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス旅と食EAST",
-      "date": "2026-06-27",
-      "date_display": "2026年6月27日",
-      "venue": "旅と食EAST",
-      "url": "https://note.com/bookcultureclub/n/nca466e18bd40",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス仙台",
-      "date": "2026-06-28",
-      "date_display": "2026年6月28日",
-      "venue": "仙台",
-      "url": "https://note.com/bookcultureclub/n/n5b1c7b0b9d8f",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス栃木",
@@ -223,7 +205,7 @@
       "date": "2026-09-26",
       "date_display": "2026年9月26日",
       "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
+      "url": "https://note.com/bookcultureclub/n/na022cade2895",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
@@ -271,6 +253,15 @@
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
+    },
+    {
+      "title": "ZINEフェス仙台",
+      "date": "2026-10-24",
+      "date_display": "2026年10月24日",
+      "venue": "仙台",
+      "url": "https://note.com/bookcultureclub/n/nbc4e198055b3",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス福岡",
