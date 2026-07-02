@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-29T03:40:26.922830",
-  "count": 43,
+  "updated_at": "2026-07-02T03:22:24.439991",
+  "count": 44,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -361,6 +361,15 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "ZINEフェス群馬",
+      "date": "2026-12-19",
+      "date_display": "2026年12月19日",
+      "venue": "群馬",
+      "url": "https://note.com/bookcultureclub/n/na9b4208b49cd",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "文学フリマ京都11",
