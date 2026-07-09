@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-06T02:58:28.516103",
-  "count": 44,
+  "updated_at": "2026-07-09T02:45:32.658143",
+  "count": 42,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -39,24 +39,6 @@
       "source": "artbookosaka"
     },
     {
-      "title": "ZINEフェス栃木",
-      "date": "2026-07-04",
-      "date_display": "2026年7月4日",
-      "venue": "栃木",
-      "url": "https://note.com/bookcultureclub/n/nc12af8461c6f",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス金沢",
-      "date": "2026-07-05",
-      "date_display": "2026年7月5日",
-      "venue": "金沢",
-      "url": "https://note.com/bookcultureclub/n/nbc44f21db4d5",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "ZINEフェス東京",
       "date": "2026-07-11",
       "date_display": "2026年7月11日",
@@ -75,7 +57,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス奈良",
+      "title": "ZINEフェス奈良（出展受付終了）",
       "date": "2026-07-19",
       "date_display": "2026年7月19日",
       "venue": "奈良",
@@ -102,7 +84,7 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "ZINEフェス写真",
+      "title": "ZINEフェス写真（出展受付終了）",
       "date": "2026-08-02",
       "date_display": "2026年8月2日",
       "venue": "写真",
@@ -111,7 +93,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス文芸・詩歌と日記・",
+      "title": "ZINEフェス文芸・詩歌と日記・（出展受付終了）",
       "date": "2026-08-02",
       "date_display": "2026年8月2日",
       "venue": "文芸・詩歌と日記・",
@@ -138,7 +120,7 @@
       "source": "comiket"
     },
     {
-      "title": "ZINEフェス埼玉",
+      "title": "ZINEフェス埼玉（出展受付終了）",
       "date": "2026-08-22",
       "date_display": "2026年8月22日",
       "venue": "埼玉",
@@ -147,7 +129,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス新潟",
+      "title": "ZINEフェス新潟（出展受付終了）",
       "date": "2026-08-23",
       "date_display": "2026年8月23日",
       "venue": "新潟",
@@ -165,7 +147,7 @@
       "source": "comitia"
     },
     {
-      "title": "ZINEフェス茨城",
+      "title": "ZINEフェス茨城（出展受付終了）",
       "date": "2026-08-29",
       "date_display": "2026年8月29日",
       "venue": "茨城",
@@ -174,7 +156,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス動物",
+      "title": "ZINEフェス動物（出展受付終了）",
       "date": "2026-09-05",
       "date_display": "2026年9月5日",
       "venue": "動物",
@@ -210,7 +192,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス京都",
+      "title": "ZINEフェス京都（出展受付終了）",
       "date": "2026-09-27",
       "date_display": "2026年9月27日",
       "venue": "京都",
