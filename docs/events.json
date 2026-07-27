@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-23T02:31:09.907120",
-  "count": 42,
+  "updated_at": "2026-07-27T02:41:23.002555",
+  "count": 35,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -37,69 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス東京",
-      "date": "2026-07-11",
-      "date_display": "2026年7月11日",
-      "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/n053a24287fc2",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス秋田",
-      "date": "2026-07-18",
-      "date_display": "2026年7月18日",
-      "venue": "秋田",
-      "url": "https://note.com/bookcultureclub/n/n5f2f337602df",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス奈良（出展受付終了）",
-      "date": "2026-07-19",
-      "date_display": "2026年7月19日",
-      "venue": "奈良",
-      "url": "https://note.com/bookcultureclub/n/n886e0b425edf",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス松山",
-      "date": "2026-07-20",
-      "date_display": "2026年7月20日",
-      "venue": "松山",
-      "url": "https://note.com/bookcultureclub/n/ne10e6fa065ba",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "文学フリマ札幌11",
-      "date": "2026-07-20",
-      "date_display": "2026年7月20日",
-      "venue": "札幌コンベンションセンター 大ホール (札幌市白石区)",
-      "url": "https://bunfree.net/event/sapporo11/",
-      "category": "文学フリマ",
-      "source": "bunfree_auto"
-    },
-    {
-      "title": "ZINEフェス写真（出展受付終了）",
-      "date": "2026-08-02",
-      "date_display": "2026年8月2日",
-      "venue": "写真",
-      "url": "https://note.com/bookcultureclub/n/naf5763ab74a7",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス文芸・詩歌と日記・（出展受付終了）",
-      "date": "2026-08-02",
-      "date_display": "2026年8月2日",
-      "venue": "文芸・詩歌と日記・",
-      "url": "https://note.com/bookcultureclub/n/n77dd4363d56d",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "文学フリマ香川3",
