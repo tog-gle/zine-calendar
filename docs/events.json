@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-30T02:08:06.909561",
-  "count": 35,
+  "updated_at": "2026-08-03T02:34:58.361818",
+  "count": 36,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -37,15 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "文学フリマ香川3",
-      "date": "2026-08-02",
-      "date_display": "2026年8月2日",
-      "venue": "サンポート高松シンボルタワー展示場 +コミュニケーションプラザ(香川県高松市)",
-      "url": "https://bunfree.net/event/kagawa03/",
-      "category": "文学フリマ",
-      "source": "bunfree_auto"
     },
     {
       "title": "コミックマーケット１０８",
@@ -102,7 +93,7 @@
       "source": "zinefes_note"
     },
     {
-      "title": "ZINEフェス山梨",
+      "title": "ZINEフェス山梨（出展受付終了）",
       "date": "2026-09-06",
       "date_display": "2026年9月6日",
       "venue": "山梨",
@@ -260,6 +251,24 @@
       "date_display": "2026年11月29日",
       "venue": "高知",
       "url": "https://note.com/bookcultureclub/n/n300c680b84a6",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス東京",
+      "date": "2026-12-05",
+      "date_display": "2026年12月5日",
+      "venue": "東京",
+      "url": "https://note.com/bookcultureclub/n/nf139406aadfb",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス島根",
+      "date": "2026-12-06",
+      "date_display": "2026年12月6日",
+      "venue": "島根",
+      "url": "https://note.com/bookcultureclub/n/nf139406aadfb",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
