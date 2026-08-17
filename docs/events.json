@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-13T01:46:13.750220",
-  "count": 36,
+  "updated_at": "2026-08-17T01:05:45.086077",
+  "count": 37,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -321,6 +321,15 @@
       "title": "COMITIA159",
       "date": "2027-03-14",
       "date_display": "2027年3月14日",
+      "venue": "東京ビッグサイト",
+      "url": "https://www.comitia.co.jp/html/schedule.html",
+      "category": "コミティア",
+      "source": "comitia"
+    },
+    {
+      "title": "COMITIA160",
+      "date": "2027-05-23",
+      "date_display": "2027年5月23日",
       "venue": "東京ビッグサイト",
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
