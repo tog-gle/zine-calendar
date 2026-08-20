@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-17T01:05:45.086077",
-  "count": 37,
+  "updated_at": "2026-08-20T01:04:24.990532",
+  "count": 38,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -125,6 +125,15 @@
       "date_display": "2026年9月27日",
       "venue": "京都",
       "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス岩手",
+      "date": "2026-10-04",
+      "date_display": "2026年10月4日",
+      "venue": "岩手",
+      "url": "https://note.com/bookcultureclub/n/nc6f0e6142f68",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
