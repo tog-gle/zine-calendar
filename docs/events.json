@@ -1,12 +1,20 @@
 {
-  "updated_at": "2026-08-24T01:07:02.172117",
-  "count": 38,
+  "updated_at": "2026-08-24T02:04:04.002342",
+  "count": 52,
   "events": [
-
     {
-      "title": "Oui,ZINE10",
-      "date": "2026-10-24",
-      "date_display": "2026年10月24日",
+      "title": "ZINEの商店街",
+      "date": "2026-04-18",
+      "date_display": "2026年4月18日",
+      "venue": "DIY BOOKS（尼崎・武庫之荘）",
+      "url": "https://www.instagram.com/p/DWD6CTNgTAp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "category": "DIY BOOKS",
+      "source": "manual"
+    },
+    {
+      "title": "Oui,ZINE8",
+      "date": "2026-04-18",
+      "date_display": "2026年4月18日",
       "venue": "DIY BOOKS（尼崎・武庫之荘）",
       "url": "https://diybooks.jp",
       "category": "DIY BOOKS",
@@ -301,6 +309,60 @@
       "source": "comiket"
     },
     {
+      "title": "ZINEフェス版画＠浜松町",
+      "date": "2027-01-09",
+      "date_display": "2027年1月9日",
+      "venue": "版画＠浜松町",
+      "url": "https://note.com/bookcultureclub/n/n26567e17c201",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェスタイポ＠浜松町",
+      "date": "2027-01-09",
+      "date_display": "2027年1月9日",
+      "venue": "タイポ＠浜松町",
+      "url": "https://note.com/bookcultureclub/n/nc82e6515adc4",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス旅と食＠浜松町",
+      "date": "2027-01-09",
+      "date_display": "2027年1月9日",
+      "venue": "旅と食＠浜松町",
+      "url": "https://note.com/bookcultureclub/n/n568fc8de72f7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス福島",
+      "date": "2027-01-10",
+      "date_display": "2027年1月10日",
+      "venue": "福島",
+      "url": "https://note.com/bookcultureclub/n/n76a8b4c14655",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス名古屋",
+      "date": "2027-01-11",
+      "date_display": "2027年1月11日",
+      "venue": "名古屋",
+      "url": "https://note.com/bookcultureclub/n/n01f0fa7d222b",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス横浜",
+      "date": "2027-01-16",
+      "date_display": "2027年1月16日",
+      "venue": "横浜",
+      "url": "https://note.com/bookcultureclub/n/n216ff3a944ef",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "文学フリマ京都11",
       "date": "2027-01-17",
       "date_display": "2027年1月17日",
@@ -308,6 +370,15 @@
       "url": "https://bunfree.net/event/kyoto11/",
       "category": "文学フリマ",
       "source": "bunfree_auto"
+    },
+    {
+      "title": "ZINEフェス鹿児島",
+      "date": "2027-01-24",
+      "date_display": "2027年1月24日",
+      "venue": "鹿児島",
+      "url": "https://note.com/bookcultureclub/n/n4ed473530dbe",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "関西コミティア78",
@@ -319,6 +390,42 @@
       "source": "k_comitia"
     },
     {
+      "title": "ZINEフェス香川",
+      "date": "2027-01-30",
+      "date_display": "2027年1月30日",
+      "venue": "香川",
+      "url": "https://note.com/bookcultureclub/n/n6baf19c3bf43",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス奈良",
+      "date": "2027-02-14",
+      "date_display": "2027年2月14日",
+      "venue": "奈良",
+      "url": "https://note.com/bookcultureclub/n/n6ab4cbbff601",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス沖縄",
+      "date": "2027-02-20",
+      "date_display": "2027年2月20日",
+      "venue": "沖縄",
+      "url": "https://note.com/bookcultureclub/n/n399901fb69e1",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス金沢",
+      "date": "2027-03-07",
+      "date_display": "2027年3月7日",
+      "venue": "金沢",
+      "url": "https://note.com/bookcultureclub/n/n7dcb862d5ea8",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "COMITIA159",
       "date": "2027-03-14",
       "date_display": "2027年3月14日",
@@ -326,6 +433,33 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "ZINEフェス和歌山",
+      "date": "2027-03-22",
+      "date_display": "2027年3月22日",
+      "venue": "和歌山",
+      "url": "https://note.com/bookcultureclub/n/nea012f816ed7",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス大阪",
+      "date": "2027-04-03",
+      "date_display": "2027年4月3日",
+      "venue": "大阪",
+      "url": "https://note.com/bookcultureclub/n/n14764ff42f86",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス松山",
+      "date": "2027-04-04",
+      "date_display": "2027年4月4日",
+      "venue": "松山",
+      "url": "https://note.com/bookcultureclub/n/n228358174d96",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "COMITIA160",
