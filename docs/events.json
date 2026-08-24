@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T01:04:24.990532",
+  "updated_at": "2026-08-24T01:07:02.172117",
   "count": 38,
   "events": [
     {
@@ -37,15 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "コミックマーケット１０８",
-      "date": "2026-08-15",
-      "date_display": "2026年8月15日〜16日",
-      "venue": "東京ビッグサイト",
-      "url": "https://www.comiket.co.jp/info-a/C108/C108Info.html",
-      "category": "コミックマーケット",
-      "source": "comiket"
     },
     {
       "title": "ZINEフェス埼玉（出展受付終了）",
@@ -307,6 +298,15 @@
       "url": "https://note.com/bookcultureclub/n/na9b4208b49cd",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "コミックマーケット１０９",
+      "date": "2026-12-29",
+      "date_display": "2026年12月29日〜31日",
+      "venue": "東京ビッグサイト",
+      "url": "https://www.comiket.co.jp/info-a/C109/C109Info.html",
+      "category": "コミックマーケット",
+      "source": "comiket"
     },
     {
       "title": "文学フリマ京都11",
