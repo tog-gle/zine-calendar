@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import re
 import json
 import os
-from datetime import datetime
+from datetime import datetime, date, timedelta
 
 HEADERS = {
     "User-Agent": (
@@ -132,44 +132,107 @@ def scrape_mzfest():
 # ─────────────────────────────────────────────
 # 4. ZINEフェス一覧 (note.com)
 # ─────────────────────────────────────────────
+ZINEFES_LIST_URL = "https://note.com/bookcultureclub/n/n14764ff42f86"
+
+HEADING_TAGS = ("h1", "h2", "h3", "h4", "h5", "h6")
+
+# 見出しの例
+#   ■ZINEフェス東京・9月26日
+#   ■ZINEフェス文芸・詩歌と日記・8月2日
+#   ■ZINEフェス福島・27年1月10日
+ZINEFES_HEADING_RE = re.compile(
+    r"^[■▲●・\s]*ZINEフェス"
+    r"(?P<loc>.+?)"
+    r"[・･]?\s*"
+    r"(?:(?P<yy>\d{2})年)?\s*"
+    r"(?P<month>\d{1,2})月(?P<day>\d{1,2})日"
+)
+
+# note の個別記事URLだけを対象にする（ハッシュタグやプロフィールを拾わないため）
+NOTE_ARTICLE_RE = re.compile(r"^https?://note\.com/[\w.\-]+/n/\w+")
+
+
+def _link_in_section(heading):
+    """見出しから次の見出しまでの間にあるnote記事リンクだけを返す。
+
+    修正前は find_next("a") で「文書内の次のリンク」を拾っていたため、
+    案内ページが未公開（受付前・募集前）でリンクが貼られていない回があると、
+    ひとつ下のイベントのリンクを取り込んでしまっていた。
+    （例：ZINEフェス東京12月5日 → ZINEフェス島根12月6日のURL）
+    """
+    for elem in heading.find_all_next():
+        if elem.name in HEADING_TAGS:
+            break
+        if elem.name == "a":
+            href = (elem.get("href") or "").strip()
+            if NOTE_ARTICLE_RE.match(href):
+                return href
+    return None
+
+
+def _resolve_year(yy, month, day):
+    """見出しに「27年」などの表記があればそれを優先、なければ直近の開催年を推定する。"""
+    if yy:
+        return 2000 + int(yy)
+    today = date.today()
+    year = today.year
+    try:
+        candidate = date(year, month, day)
+    except ValueError:
+        return year
+    # 一覧では翌年分に「27年」等の表記が付くため、年表記なしの過去日は
+    # 基本的に当年扱いにする（過去イベントは表示側で非表示になる）。
+    # 半年以上前の日付だけ、翌年の回とみなして繰り上げる。
+    if candidate < today - timedelta(days=180):
+        year += 1
+    return year
+
+
 def scrape_zinefes_note():
     events = []
-    url = "https://note.com/bookcultureclub/n/n14764ff42f86"
-    soup = fetch(url)
+    soup = fetch(ZINEFES_LIST_URL)
     if not soup:
         return events
-    headings = soup.find_all(["h3", "h2"])
-    current_year = datetime.now().year
-    for h in headings:
+
+    fallback_count = 0
+    for h in soup.find_all(HEADING_TAGS):
         text = h.get_text(strip=True)
-        match = re.match(r"[■▲●]?\s*ZINEフェス([^\・・\d]+)[・・](\d+)月(\d+)日", text)
-        if not match:
-            match = re.match(r"[■▲●]?\s*ZINEフェス([^\s\d]+)\s*[・・]?\s*(\d+)月(\d+)日", text)
+        match = ZINEFES_HEADING_RE.match(text)
         if not match:
             continue
-        location = match.group(1).strip()
-        month = int(match.group(2))
-        day = int(match.group(3))
-        now = datetime.now()
-        year = current_year
-        if month < now.month - 1:
-            year = current_year + 1
-        date_str = f"{year}-{month:02d}-{day:02d}"
-        next_elem = h.find_next("a")
-        event_url = next_elem.get("href", url) if next_elem else url
-        if not event_url.startswith("http"):
-            event_url = url
-        status = "（出展受付終了）" if "出展受付終了" in text or "受付終了" in text else ""
+
+        location = re.sub(r"[【\[].*?[】\]]", "", match.group("loc"))
+        location = location.strip(" 　・･＠@")
+        if not location:
+            continue
+        if any(ng in location for ng in ("●", "○", "〇", "未確定", "未定")):
+            continue
+
+        month = int(match.group("month"))
+        day = int(match.group("day"))
+        if not (1 <= month <= 12 and 1 <= day <= 31):
+            continue
+        year = _resolve_year(match.group("yy"), month, day)
+
+        event_url = _link_in_section(h)
+        if not event_url:
+            # 案内ページが未公開の回は、他イベントのURLを流用せず一覧ページへ誘導する
+            event_url = ZINEFES_LIST_URL
+            fallback_count += 1
+
+        status = "（出展受付終了）" if "受付終了" in text else ""
         events.append({
             "title": f"ZINEフェス{location}{status}",
-            "date": date_str,
+            "date": f"{year}-{month:02d}-{day:02d}",
             "date_display": f"{year}年{month}月{day}日",
             "venue": location,
             "url": event_url,
             "category": "ZINEフェス",
             "source": "zinefes_note"
         })
-    print(f"[ZINEフェス/note] {len(events)} events found")
+
+    print(f"[ZINEフェス/note] {len(events)} events found "
+          f"（案内ページ未公開のため一覧ページを指した回: {fallback_count}）")
     return events
 
 
