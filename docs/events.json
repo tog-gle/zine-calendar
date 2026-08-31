@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-27T07:16:07.634677",
-  "count": 52,
+  "updated_at": "2026-08-31T03:35:39.456453",
+  "count": 50,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -37,33 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス埼玉（出展受付終了）",
-      "date": "2026-08-22",
-      "date_display": "2026年8月22日",
-      "venue": "埼玉",
-      "url": "https://note.com/bookcultureclub/n/nfdd1a4ab0c05",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス新潟（出展受付終了）",
-      "date": "2026-08-23",
-      "date_display": "2026年8月23日",
-      "venue": "新潟",
-      "url": "https://note.com/bookcultureclub/n/n7db9410d0bb8",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス茨城（出展受付終了）",
-      "date": "2026-08-29",
-      "date_display": "2026年8月29日",
-      "venue": "茨城",
-      "url": "https://note.com/bookcultureclub/n/n4e5e795f67f7",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス動物（出展受付終了）",
@@ -469,6 +442,15 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "ZINEフェス茨城",
+      "date": "2027-07-19",
+      "date_display": "2027年7月19日",
+      "venue": "茨城",
+      "url": "https://note.com/bookcultureclub/n/nc4fa7becd14c",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     }
   ]
 }
