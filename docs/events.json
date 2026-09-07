@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-03T02:54:25.001821",
-  "count": 50,
+  "updated_at": "2026-09-07T02:52:10.152864",
+  "count": 54,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -66,6 +66,15 @@
       "source": "bunfree_auto"
     },
     {
+      "title": "まちのZINEフェス 兵庫秋の3部作",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日",
+      "venue": "関西各地",
+      "url": "https://mzfest.3zui.jp/hyogo-autumn",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
       "title": "ZINEフェス東京",
       "date": "2026-09-26",
       "date_display": "2026年9月26日",
@@ -82,6 +91,15 @@
       "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "まちのZINEフェス NightMarket",
+      "date": "2026-10-04",
+      "date_display": "2026年10月4日",
+      "venue": "阪神尼崎駅前・中央公園（兵庫県尼崎市神田中通１丁目４）",
+      "url": "https://mzfest.3zui.jp/hannama",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス岩手",
@@ -192,6 +210,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "まちのZINEフェス 東広島アザレア",
+      "date": "2026-11-21",
+      "date_display": "2026年11月21日",
+      "venue": "東広島市市民文化センター（ 広島県東広島市西条西本町28-６アザレアホール）",
+      "url": "https://mzfest.3zui.jp/higahiro",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
       "title": "ZINEフェス茅ヶ崎",
       "date": "2026-11-21",
       "date_display": "2026年11月21日",
@@ -223,7 +250,7 @@
       "date": "2026-12-05",
       "date_display": "2026年12月5日",
       "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/n14764ff42f86",
+      "url": "https://note.com/bookcultureclub/n/naf4b87294a29",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
@@ -298,6 +325,15 @@
       "url": "https://note.com/bookcultureclub/n/n568fc8de72f7",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "まちのZINEフェス 旧大津公会堂",
+      "date": "2027-01-10",
+      "date_display": "2027年1月10日",
+      "venue": "旧大津公会堂（ 〒520-0047 滋賀県大津市浜大津１丁目４-１）",
+      "url": "https://mzfest.3zui.jp/otsu",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス福島",
