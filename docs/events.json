@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T03:03:26.035201",
+  "updated_at": "2026-09-14T03:20:52.165705",
   "count": 54,
   "events": [
     {
@@ -55,15 +55,6 @@
       "url": "https://note.com/bookcultureclub/n/n4754869b787a",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "文学フリマ大阪14",
-      "date": "2026-09-13",
-      "date_display": "2026年9月13日",
-      "venue": "インテックス大阪 2号館 (大阪市住之江区)",
-      "url": "https://bunfree.net/event/osaka14/",
-      "category": "文学フリマ",
-      "source": "bunfree_auto"
     },
     {
       "title": "まちのZINEフェス 兵庫秋の3部作",
@@ -224,6 +215,15 @@
       "date_display": "2026年11月21日",
       "venue": "茅ヶ崎",
       "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス札幌",
+      "date": "2026-11-23",
+      "date_display": "2026年11月23日",
+      "venue": "札幌",
+      "url": "https://note.com/bookcultureclub/n/n5f45a945ca8b",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
