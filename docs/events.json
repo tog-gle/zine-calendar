@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-14T03:20:52.165705",
-  "count": 54,
+  "updated_at": "2026-09-17T03:24:29.359930",
+  "count": 56,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -413,6 +413,24 @@
       "date_display": "2027年2月20日",
       "venue": "沖縄",
       "url": "https://note.com/bookcultureclub/n/n399901fb69e1",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス写真＠神戸・三宮KIITOホール",
+      "date": "2027-02-28",
+      "date_display": "2027年2月28日",
+      "venue": "写真＠神戸・三宮KIITOホール",
+      "url": "https://note.com/bookcultureclub/n/n850134bf6eba",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス動物＠神戸・三宮KIITOホール",
+      "date": "2027-02-28",
+      "date_display": "2027年2月28日",
+      "venue": "動物＠神戸・三宮KIITOホール",
+      "url": "https://note.com/bookcultureclub/n/n5c0ad31a0a67",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
