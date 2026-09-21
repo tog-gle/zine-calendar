@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-17T03:24:29.359930",
-  "count": 56,
+  "updated_at": "2026-09-21T03:18:33.273107",
+  "count": 52,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -21,10 +21,10 @@
       "source": "manual"
     },
     {
-      "title": "関西コミティア76",
-      "date": "2026-05-17",
-      "date_display": "2026年5月17日",
-      "venue": "インテックス大阪",
+      "title": "関西コミティア79",
+      "date": "2026-05-16",
+      "date_display": "2026年5月16日",
+      "venue": "インテックス大阪 2号館",
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
@@ -37,33 +37,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス動物（出展受付終了）",
-      "date": "2026-09-05",
-      "date_display": "2026年9月5日",
-      "venue": "動物",
-      "url": "https://note.com/bookcultureclub/n/n0146fb119b52",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス山梨（出展受付終了）",
-      "date": "2026-09-06",
-      "date_display": "2026年9月6日",
-      "venue": "山梨",
-      "url": "https://note.com/bookcultureclub/n/n4754869b787a",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "まちのZINEフェス 兵庫秋の3部作",
-      "date": "2026-09-26",
-      "date_display": "2026年9月26日",
-      "venue": "関西各地",
-      "url": "https://mzfest.3zui.jp/hyogo-autumn",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス東京",
@@ -82,15 +55,6 @@
       "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "まちのZINEフェス NightMarket",
-      "date": "2026-10-04",
-      "date_display": "2026年10月4日",
-      "venue": "阪神尼崎駅前・中央公園（兵庫県尼崎市神田中通１丁目４）",
-      "url": "https://mzfest.3zui.jp/hannama",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス岩手",
@@ -174,6 +138,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEフェス吉祥寺",
+      "date": "2026-11-07",
+      "date_display": "2026年11月7日",
+      "venue": "吉祥寺",
+      "url": "https://note.com/bookcultureclub/n/n2fc2e06d777b",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "文学フリマ東京43",
       "date": "2026-11-08",
       "date_display": "2026年11月8日",
@@ -199,15 +172,6 @@
       "url": "https://note.com/bookcultureclub/n/nade821ca5ec7",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "まちのZINEフェス 東広島アザレア",
-      "date": "2026-11-21",
-      "date_display": "2026年11月21日",
-      "venue": "東広島市市民文化センター（ 広島県東広島市西条西本町28-６アザレアホール）",
-      "url": "https://mzfest.3zui.jp/higahiro",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス茅ヶ崎",
@@ -273,6 +237,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEフェス大阪",
+      "date": "2026-12-13",
+      "date_display": "2026年12月13日",
+      "venue": "大阪",
+      "url": "https://note.com/bookcultureclub/n/nca4a49c40f36",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "COMITIA158",
       "date": "2026-12-13",
       "date_display": "2026年12月13日",
@@ -325,15 +298,6 @@
       "url": "https://note.com/bookcultureclub/n/n568fc8de72f7",
       "category": "ZINEフェス",
       "source": "zinefes_note"
-    },
-    {
-      "title": "まちのZINEフェス 旧大津公会堂",
-      "date": "2027-01-10",
-      "date_display": "2027年1月10日",
-      "venue": "旧大津公会堂（ 〒520-0047 滋賀県大津市浜大津１丁目４-１）",
-      "url": "https://mzfest.3zui.jp/otsu",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
     },
     {
       "title": "ZINEフェス福島",
