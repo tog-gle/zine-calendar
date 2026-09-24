@@ -1,8 +1,9 @@
 """
 events.json から地域別のイベント一覧HTMLをつくり、
 diybooks.jp の「全国のZINEイベント一覧」ページ本文の
-  <!-- ZINE-LIST:START --> 〜 <!-- ZINE-LIST:END -->
-の間だけを書き換える。目印の外側（説明文・埋め込みなど）には触らない。
+  <div id="zine-list"></div>
+の中身だけを書き換える。その外側（説明文など）には触らない。
+見た目・入稿日チェック・代理表示はテーマのカスタムLiquid（zine-list.liquid）が担当する。
 
 必要な GitHub Secrets
   SHOPIFY_SHOP           例: xxxxx.myshopify.com
@@ -23,8 +24,8 @@ import requests
 
 PAGE_HANDLE = "zine-event-all"
 API_VERSION = "2026-07"
-START = "<!-- ZINE-LIST:START -->"
-END = "<!-- ZINE-LIST:END -->"
+# ページ本文の目印：<div id="zine-list"></div>（中身はこのスクリプトが毎回入れ替える）
+MARK = re.compile(r'<div id="zine-list"[^>]*>.*?</div>', re.S)
 JST = timezone(timedelta(hours=9))
 
 # ─────────────────────────────────────────────
@@ -77,17 +78,7 @@ def region_of(ev):
 # ─────────────────────────────────────────────
 # HTML生成
 # ─────────────────────────────────────────────
-STYLE = """<style>
-.zl-tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.5rem 0 1rem;padding:0;list-style:none}
-.zl-tabs a{display:inline-block;padding:.35rem .8rem;border:1px solid currentColor;border-radius:999px;font-size:.85rem;text-decoration:none}
-.zl-region{margin-top:2rem;scroll-margin-top:5rem}
-.zl-region h2{font-size:1.2rem;border-bottom:2px solid currentColor;padding-bottom:.3rem}
-.zl-list{list-style:none;padding:0;margin:0}
-.zl-list li{padding:.7rem 0;border-bottom:1px solid rgba(0,0,0,.12)}
-.zl-list h3{font-size:1rem;margin:0 0 .2rem}
-.zl-list p{font-size:.85rem;margin:0;opacity:.8}
-.zl-note{font-size:.75rem;opacity:.7;margin-top:1rem}
-</style>"""
+
 
 
 def build_html(events, today):
@@ -115,7 +106,7 @@ def build_html(events, today):
             meta = escape(e.get("date_display") or e["date"])
             if e.get("venue"):
                 meta += "｜" + escape(e["venue"])
-            lis.append(f"<li><h3>{link}</h3><p>{meta}</p></li>")
+            lis.append(f'<li><h3>{link}</h3><p><time datetime="{e["date"]}">{meta}</time></p></li>')
         sections.append(
             f'<section class="zl-region" id="zl-{key}">'
             f"<h2>{escape(heading)}</h2>"
@@ -124,10 +115,12 @@ def build_html(events, today):
 
     updated = today.strftime("%Y年%-m月%-d日")
     return (
-        f"{START}\n{STYLE}\n"
-        f'<ul class="zl-tabs">{"".join(tabs)}</ul>\n'
-        + "\n".join(sections)
-        + f'\n<p class="zl-note">{updated}時点の情報です。開催内容は各公式サイトでご確認ください。</p>\n{END}'
+        '<div id="zine-list">'
+        f'<ul class="zl-tabs">{"".join(tabs)}</ul>'
+        + "".join(sections)
+        + f'<p class="zl-note"><time datetime="{today.strftime("%Y-%m-%dT%H:%M:%S+09:00")}">{updated}</time>時点の情報です。'
+        '開催内容は各公式サイトでご確認ください。</p>'
+        '</div>'
     )
 
 
@@ -140,7 +133,8 @@ def get_token(shop, cid, secret):
         data={"grant_type": "client_credentials", "client_id": cid, "client_secret": secret},
         timeout=20,
     )
-    res.raise_for_status()
+    if res.status_code != 200:
+        raise RuntimeError(f"トークン取得に失敗 {res.status_code}: {res.text[:300]}")
     return res.json()["access_token"]
 
 
@@ -151,7 +145,8 @@ def gql(shop, token, query, variables=None):
         json={"query": query, "variables": variables or {}},
         timeout=30,
     )
-    res.raise_for_status()
+    if res.status_code != 200:
+        raise RuntimeError(f"API呼び出しに失敗 {res.status_code}: {res.text[:300]}")
     data = res.json()
     if data.get("errors"):
         raise RuntimeError(data["errors"])
@@ -170,7 +165,8 @@ def main():
         print("preview.html を書き出しました")
         return
 
-    shop = os.environ.get("SHOPIFY_SHOP")
+    shop = (os.environ.get("SHOPIFY_SHOP") or "").strip()
+    shop = re.sub(r"^https?://", "", shop).strip("/")
     cid = os.environ.get("SHOPIFY_CLIENT_ID")
     secret = os.environ.get("SHOPIFY_CLIENT_SECRET")
     if not (shop and cid and secret):
@@ -187,10 +183,9 @@ def main():
     page = nodes[0]
     body = page["body"] or ""
 
-    pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.S)
-    if not pattern.search(body):
-        raise RuntimeError("ページ本文に目印（ZINE-LIST:START / END）がありません。先に本文へ追加してください")
-    new_body = pattern.sub(lambda m: block, body, count=1)
+    if not MARK.search(body):
+        raise RuntimeError('ページ本文に <div id="zine-list"></div> がありません。HTML表示で本文に追加してください')
+    new_body = MARK.sub(lambda m: block, body, count=1)
 
     if new_body == body:
         print("[Shopify] 変更なし")
@@ -206,4 +201,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as err:
+        print(f"[Shopify] エラー: {err}")
+        sys.exit(1)
