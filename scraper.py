@@ -80,48 +80,63 @@ def scrape_tabf():
 # 3. まちのZINEフェス
 # ─────────────────────────────────────────────
 def scrape_mzfest():
+    """まちのZINEフェス（2026年9月に zine-fest.tou10.jp へ移転）"""
     events = []
-    soup = fetch("https://mzfest.3zui.jp/")
+    base = "https://zine-fest.tou10.jp"
+    soup = fetch(base + "/event") or fetch(base + "/")
     if not soup:
         return events
-    nav_links = soup.find_all("a", href=re.compile(r"https://mzfest\.3zui\.jp/(?!#)"))
-    event_pages = {}
-    skip_paths = {"", "/", "/about", "/boothbreak"}
-    for link in nav_links:
-        href = link.get("href", "").rstrip("/")
-        label = link.get_text(strip=True)
-        path = href.replace("https://mzfest.3zui.jp", "")
-        if path not in skip_paths and label and len(label) > 1:
-            event_pages[href] = label
-    for page_url, label in event_pages.items():
-        page_soup = fetch(page_url)
-        if not page_soup:
+
+    seen = set()
+    for a in soup.find_all("a", href=True):
+        href = a["href"]
+        if href.startswith("/"):
+            href = base + href
+        m_slug = re.match(re.escape(base) + r"/event/([\w\-]+)/?$", href)
+        if not m_slug or href in seen:
             continue
-        page_text = page_soup.get_text(separator="\n")
-        date_jp = re.search(r"(\d{4})年(\d{1,2})月(\d{1,2})日", page_text)
-        date_en = re.search(r"(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)\s+(\d{1,2})", page_text)
-        venue_match = re.search(r"場所\s*[：:]\s*([^\n]+)", page_text)
-        venue = venue_match.group(1).strip() if venue_match else "関西各地"
-        if date_jp:
-            y, m, d = date_jp.groups()
-            date_str = f"{y}-{int(m):02d}-{int(d):02d}"
-            date_display = f"{y}年{m}月{d}日"
-        elif date_en:
-            month_map = {"JAN":1,"FEB":2,"MAR":3,"APR":4,"MAY":5,"JUN":6,
-                         "JUL":7,"AUG":8,"SEP":9,"OCT":10,"NOV":11,"DEC":12}
-            year = datetime.now().year
-            m_num = month_map.get(date_en.group(1), 1)
-            d_num = int(date_en.group(2))
-            date_str = f"{year}-{m_num:02d}-{d_num:02d}"
-            date_display = f"{year}年{m_num}月{d_num}日"
+
+        img = a.find("img")
+        alt = (img.get("alt") if img else "") or a.get("aria-label", "")
+        text = a.get_text(" ", strip=True)
+
+        # 日付：「2026.9.26 SAT」「2026.9.26 SAT & 9.27 SUN」
+        m_date = re.search(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", text) or \
+                 re.search(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", alt)
+        if not m_date:
+            continue
+        y, m, d = map(int, m_date.groups())
+        date_str = f"{y}-{m:02d}-{d:02d}"
+        date_display = f"{y}年{m}月{d}日"
+        m_end = re.search(r"&\s*(\d{1,2})\.(\d{1,2})", text)
+        if m_end:
+            em, ed = map(int, m_end.groups())
+            date_display += f"〜{ed}日" if em == m else f"〜{em}月{ed}日"
+
+        # 会場：「まちのZINEフェス 神戸（兵庫・西神中央ホール）のキービジュアル」
+        city, venue = "", "関西各地"
+        m_alt = re.search(r"まちのZINEフェス\s*(\S+?)（(.+)）のキービジュアル", alt)
+        if m_alt:
+            city = m_alt.group(1)
+            inner = m_alt.group(2)
+            pref, _, place = inner.partition("・")
+            venue = f"{place}（{pref}・{city}）" if place else inner
         else:
-            continue
+            m_city = re.search(r"([^\s/]+)\s*/\s*([^\s/]+)", text)
+            if m_city:
+                city = m_city.group(1)
+                venue = f"{m_city.group(1)}（{m_city.group(2)}）"
+
+        place_name = venue.split("（")[0] if m_alt else ""
+        title = f"まちのZINEフェス {city}" + (f"・{place_name}" if place_name else "")
+
+        seen.add(href)
         events.append({
-            "title": f"まちのZINEフェス {label}",
+            "title": title.strip(),
             "date": date_str,
             "date_display": date_display,
             "venue": venue[:50],
-            "url": page_url,
+            "url": href,
             "category": "まちのZINEフェス",
             "source": "mzfest"
         })
