@@ -122,17 +122,9 @@ def build_html(events, today):
         heading = f"{name}のZINEイベント・スケジュール"
         if examples:
             heading = f"{name}（{examples}）のZINEイベント・スケジュール"
-        lis = []
-        for e in items:
-            title = escape(e["title"])
-            link = (f'<a href="{escape(e["url"])}" target="_blank" rel="noopener">{title}</a>'
-                    if e.get("url") else title)
-            meta = escape(e.get("date_display") or e["date"])
-            if e.get("venue"):
-                meta += "｜" + escape(e["venue"])
-            lis.append(f'<li><h3>{link}</h3><p><time datetime="{e["date"]}">{meta}</time></p></li>')
+        lis = [event_li(e) for e in items]
         sections.append(
-            f'<section class="zl-region" id="zl-{key}">'
+            f'<section class="zl-region zl-by-region" id="zl-{key}">'
             f"<h2>{escape(heading)}</h2>"
             f'<ul class="zl-list">{"".join(lis)}</ul>'
             + (f'<p class="zl-more"><a href="/pages/{region_handle(key)}">{escape(REGION_PAGES[key][0])}のZINEイベントだけを見る →</a></p>'
@@ -178,7 +170,8 @@ def event_li(e):
     meta = escape(e.get("date_display") or e["date"])
     if e.get("venue"):
         meta += "｜" + escape(e["venue"])
-    return f'<li><h3>{link}</h3><p><time datetime="{e["date"]}">{meta}</time></p></li>'
+    cat = f'<span class="zl-cat">{escape(e["category"])}</span>' if e.get("category") else ""
+    return f'<li><h3>{link}</h3>{cat}<p><time datetime="{e["date"]}">{meta}</time></p></li>'
 
 
 def build_region_html(events, today, key):
