@@ -235,7 +235,12 @@ def get_token(shop, cid, secret):
     )
     if res.status_code != 200:
         raise RuntimeError(f"トークン取得に失敗 {res.status_code}: {res.text[:300]}")
-    return res.json()["access_token"]
+    data = res.json()
+    scopes = data.get("scope", "")
+    print(f"[Shopify] 許可されている権限: {scopes or '（なし）'}")
+    if "write_online_store_pages" not in scopes:
+        raise RuntimeError("write_online_store_pages が許可されていません。アプリをストアに入れ直して権限を承認してください")
+    return data["access_token"]
 
 
 def gql(shop, token, query, variables=None):
