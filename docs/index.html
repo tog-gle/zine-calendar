@@ -300,10 +300,10 @@
       let sub = '';
       if (chosen.length > 1) sub += '選んだ' + chosen.length + '件のうち、いちばん早い「' + esc(first.title) + '」に合わせています。';
       else sub += '「' + esc(first.title) + '」（' + esc(first.date_display || first.date) + '）に合わせています。';
-      sub += '<br>外注の印刷所で、開催の' + PLAN.printLeadDays + '日前を目安にしています' + (dl.shifted ? '（土日を避けて前倒し）' : '') + '。';
-      sub += '<br>印刷通販の場合、一般的には入稿（確定）日から7日程度で届くことが多いです。';
-      if (late) sub += '<br>特急料金での対応も可能、DIYでつくるなら間に合うかも。がんばってください！';
-      else sub += '<br>今日から入稿まで、あと' + left + '日です。';
+      sub += '<br>印刷所への入稿日＝' + PLAN.printLeadDays + '日前を目安' + (dl.shifted ? '（土日を避けて前倒し）' : '') + '。';
+      sub += late
+        ? '<br>特急料金での対応も可能、DIYでつくるなら間に合うかも。がんばってください！'
+        : '入稿まであと' + left + '日です。';
 
       const offers = [];
       if (!late) {
