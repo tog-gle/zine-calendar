@@ -144,6 +144,56 @@
     @media (max-width: 480px) {
       .event-item { grid-template-columns: 1fr; gap: 0.2rem; }
     }
+
+    /* ── 入稿日チェック ───────────────────── */
+    .event-item { grid-template-columns: 1.4rem minmax(140px, max-content) 1fr; }
+    .event-pick {
+      width: 1rem; height: 1rem; margin-top: 0.15rem;
+      accent-color: #111; cursor: pointer;
+    }
+    .event-item.is-picked { background: #f6f6f6; }
+
+    .deadline-bar {
+      position: sticky;
+      bottom: 0;
+      margin: 1.5rem -1rem 0;
+      padding: 0.9rem 1rem 1rem;
+      background: #fff;
+      border-top: 2px solid #111;
+    }
+    .deadline-hint { font-size: 0.8rem; color: #555; }
+    .deadline-bar[data-state="idle"] .deadline-result { display: none; }
+    .deadline-bar[data-state="active"] .deadline-hint { display: none; }
+
+    .deadline-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 0.5rem; flex-wrap: wrap;
+    }
+    .deadline-label { font-size: 0.75rem; color: #555; }
+    .deadline-date { font-size: 1.35rem; font-weight: bold; letter-spacing: 0.02em; }
+    .deadline-sub { font-size: 0.75rem; color: #555; margin-top: 0.2rem; line-height: 1.5; }
+    .deadline-clear {
+      font-size: 0.7rem; background: none; border: none; color: #555;
+      text-decoration: underline; cursor: pointer; padding: 0;
+    }
+    .deadline-offers {
+      list-style: none; margin-top: 0.7rem;
+      display: grid; gap: 0.4rem;
+    }
+    .deadline-offers a {
+      display: block; padding: 0.5rem 0.7rem;
+      border: 1px solid #111; color: #111; text-decoration: none;
+      font-size: 0.8rem; line-height: 1.45;
+    }
+    .deadline-offers a:hover, .deadline-offers a:focus-visible { background: #111; color: #fff; }
+    .deadline-offers small { display: block; font-size: 0.7rem; opacity: 0.75; }
+    .deadline-bar.is-late .deadline-date { text-decoration: line-through; }
+
+    @media (max-width: 480px) {
+      .event-item { grid-template-columns: 1.4rem 1fr; }
+      .event-item > div { grid-column: 2; }
+      .deadline-date { font-size: 1.15rem; }
+    }
   </style>
 </head>
 <body>
@@ -166,6 +216,11 @@
 
   <div id="calendar"></div>
 
+  <div class="deadline-bar" id="deadline-bar" data-state="idle" aria-live="polite">
+    <p class="deadline-hint">出たいイベントにチェックを入れると、印刷の入稿日の目安が分かります。</p>
+    <div class="deadline-result" id="deadline-result"></div>
+  </div>
+
   <script>
     fetch('./events.json?t=' + Date.now())
       .then(r => r.json())
@@ -174,6 +229,111 @@
         document.getElementById('calendar').innerHTML =
           '<p class="empty">イベント情報を読み込めませんでした。</p>';
       });
+
+
+    // ───────────────────────────────────────────
+    // 入稿日チェックの設定（ここだけ書き換えればOK）
+    // ───────────────────────────────────────────
+    const PLAN = {
+      // 外注の印刷所へ入稿する目安：開催日の何日前か（仮の値）
+      printLeadDays: 14,
+      // 入稿日が土日にかかったら直前の金曜に前倒しする
+      avoidWeekend: true,
+      // スクール：修了日が入稿日より前の期を「間に合う」として案内する
+      // 例 { name: '11期', start: '2026-11-02', end: '2026-12-21', url: 'https://diybooks.jp/pages/zine-school' }
+      schools: [],
+      schoolUrl: 'https://diybooks.jp/pages/zine-school',
+      // いつでも始められるZINEコース（旧アーカイブ）
+      courseUrl: '',
+      // まだZINE（書き込める束見本）
+      madaZineUrl: ''
+    };
+
+    const picked = new Set();
+    function evKey(e) { return (e.date || '') + '|' + e.title; }
+    function esc(t) {
+      return String(t == null ? '' : t).replace(/[&<>"']/g, function(c) {
+        return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+      });
+    }
+    function parseDate(str) {
+      const p = str.split('-').map(Number);
+      return new Date(p[0], p[1] - 1, p[2]);
+    }
+    function fmt(d) {
+      const w = '日月火水木金土'[d.getDay()];
+      return d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日（' + w + '）';
+    }
+    function today0() { const n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+    function daysBetween(a, b) { return Math.round((b - a) / 86400000); }
+
+    function calcDeadline(eventDate) {
+      const d = new Date(eventDate);
+      d.setDate(d.getDate() - PLAN.printLeadDays);
+      let shifted = false;
+      if (PLAN.avoidWeekend) {
+        while (d.getDay() === 0 || d.getDay() === 6) { d.setDate(d.getDate() - 1); shifted = true; }
+      }
+      return { date: d, shifted: shifted };
+    }
+
+    function updateDeadline() {
+      const bar = document.getElementById('deadline-bar');
+      const box = document.getElementById('deadline-result');
+      const chosen = allEvents.filter(function(e) { return e.date && picked.has(evKey(e)); })
+        .sort(function(a, b) { return a.date < b.date ? -1 : 1; });
+
+      if (!chosen.length) { bar.dataset.state = 'idle'; bar.classList.remove('is-late'); box.innerHTML = ''; return; }
+      bar.dataset.state = 'active';
+
+      const first = chosen[0];
+      const dl = calcDeadline(parseDate(first.date));
+      const now = today0();
+      const left = daysBetween(now, dl.date);
+      const late = left < 0;
+      bar.classList.toggle('is-late', late);
+
+      let sub = '';
+      if (chosen.length > 1) sub += '選んだ' + chosen.length + '件のうち、いちばん早い「' + esc(first.title) + '」に合わせています。';
+      else sub += '「' + esc(first.title) + '」（' + esc(first.date_display || first.date) + '）に合わせています。';
+      sub += '<br>外注の印刷所で、開催の' + PLAN.printLeadDays + '日前を目安にしています' + (dl.shifted ? '（土日を避けて前倒し）' : '') + '。';
+      if (late) sub += '<br>外注の目安日は過ぎています。店内のリソグラフなら間に合う場合があるので、ご相談ください。';
+      else sub += '<br>今日から入稿まで、あと' + left + '日です。';
+
+      const offers = [];
+      if (!late) {
+        const school = PLAN.schools
+          .filter(function(s) { return parseDate(s.start) >= now && parseDate(s.end) <= dl.date; })
+          .sort(function(a, b) { return a.start < b.start ? -1 : 1; })[0];
+        if (school) {
+          offers.push('<li><a href="' + esc(school.url || PLAN.schoolUrl) + '" target="_blank" rel="noopener">' +
+            'ZINEスクール' + esc(school.name) + 'で、仲間と一緒に仕上げる' +
+            '<small>' + esc(fmt(parseDate(school.start))) + '開講、' + esc(fmt(parseDate(school.end))) + '修了。入稿日に間に合います</small></a></li>');
+        }
+      }
+      if (PLAN.courseUrl) {
+        offers.push('<li><a href="' + esc(PLAN.courseUrl) + '" target="_blank" rel="noopener">' +
+          'ZINEコースで、今日から自分のペースで始める' +
+          '<small>音声とスライドで進めるコース。開講日を待たずに始められます</small></a></li>');
+      }
+      if (PLAN.madaZineUrl) {
+        offers.push('<li><a href="' + esc(PLAN.madaZineUrl) + '" target="_blank" rel="noopener">' +
+          'まだZINEで、台割と締切を手元に置く' +
+          '<small>書き込める束見本に、台割シートとスケジュールつき</small></a></li>');
+      }
+
+      box.innerHTML =
+        '<div class="deadline-head">' +
+          '<div><p class="deadline-label">入稿日の目安</p><p class="deadline-date">' + fmt(dl.date) + '</p></div>' +
+          '<button type="button" class="deadline-clear" id="deadline-clear">選択を解除</button>' +
+        '</div>' +
+        '<p class="deadline-sub">' + sub + '</p>' +
+        (offers.length ? '<ul class="deadline-offers">' + offers.join('') + '</ul>' : '');
+
+      document.getElementById('deadline-clear').addEventListener('click', function() {
+        picked.clear(); render(); updateDeadline();
+      });
+    }
 
     let allEvents = [];
     let currentCat = 'all';
@@ -243,7 +403,13 @@
         const parts = month.split('-');
         const label = month === '未定' ? '未定' : parts[0] + '年' + parseInt(parts[1]) + '月';
         const items = grouped[month].map(function(ev) {
-          return '<li class="event-item">' +
+          const k = evKey(ev);
+          const on = picked.has(k);
+          return '<li class="event-item' + (on ? ' is-picked' : '') + '">' +
+            (ev.date
+              ? '<input type="checkbox" class="event-pick" data-key="' + esc(k) + '"' + (on ? ' checked' : '') +
+                ' aria-label="' + esc(ev.title) + 'の入稿日を調べる">'
+              : '<span></span>') +
             '<span class="event-date">' + (ev.date_display || ev.date || '未定') + '</span>' +
             '<div>' +
               '<a class="event-title" href="' + ev.url + '" target="_blank" rel="noopener">' +
@@ -260,6 +426,14 @@
           '<ul class="event-list">' + items + '</ul>' +
           '</div>';
       }).join('');
+
+      cal.querySelectorAll('.event-pick').forEach(function(cb) {
+        cb.addEventListener('change', function() {
+          if (cb.checked) picked.add(cb.dataset.key); else picked.delete(cb.dataset.key);
+          cb.closest('.event-item').classList.toggle('is-picked', cb.checked);
+          updateDeadline();
+        });
+      });
     }
   </script>
 </body>
