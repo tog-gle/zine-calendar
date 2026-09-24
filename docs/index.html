@@ -24,6 +24,7 @@
       margin-bottom: 0.3rem;
     }
 
+    .meta a { color: inherit; }
     .meta {
       font-size: 0.75rem;
       color: #888;
@@ -200,6 +201,7 @@
 
   <h1>ZINE EVENT CALENDAR</h1>
   <p class="meta" id="updated-at">読み込み中...</p>
+  <p class="meta" id="submit-link" hidden>ZINEイベントの主催者の方へ：<a id="submit-link-a" href="#" target="_blank" rel="noopener">掲載のお申し込み（無料）</a></p>
 
   <div class="filters">
     <button class="filter-btn active" data-cat="all">ALL</button>
@@ -246,7 +248,9 @@
       // いつでも始められるZINEコース（旧アーカイブ）
       courseUrl: '',
       // まだZINE（書き込める束見本）
-      madaZineUrl: ''
+      madaZineUrl: '',
+      // イベント掲載フォーム（GoogleフォームのURL）
+      formUrl: ''
     };
 
     const picked = new Set();
@@ -344,6 +348,11 @@
       const y = now.getFullYear();
       const m = String(now.getMonth() + 1).padStart(2, '0');
       return y + '-' + m;
+    }
+
+    if (PLAN.formUrl) {
+      document.getElementById('submit-link-a').href = PLAN.formUrl;
+      document.getElementById('submit-link').hidden = false;
     }
 
     function init(data) {
