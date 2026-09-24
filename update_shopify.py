@@ -143,12 +143,32 @@ def build_html(events, today):
     updated = today.strftime("%Y年%-m月%-d日")
     return (
         '<div id="zine-list">'
-        f'<ul class="zl-tabs">{"".join(tabs)}</ul>'
+        + region_nav(events, today)
         + "".join(sections)
         + f'<p class="zl-note"><time datetime="{today.strftime("%Y-%m-%dT%H:%M:%S+09:00")}">{updated}</time>時点の情報です。'
         '開催内容は各公式サイトでご確認ください。</p>'
         '</div>'
     )
+
+
+def region_nav(events, today, current=None):
+    t = today.strftime("%Y-%m-%d")
+    counts = {}
+    total = 0
+    for e in events:
+        if e.get("date") and e["date"] >= t:
+            total += 1
+            counts[region_of(e)] = counts.get(region_of(e), 0) + 1
+
+    def item(href, label, n, on):
+        cur = ' aria-current="page"' if on else ""
+        return f'<li><a href="{href}"{cur}>{escape(label)}（{n}）</a></li>'
+
+    items = [item(f"/pages/{PAGE_HANDLE}", "全国", total, current is None)]
+    for key, name, _ in REGIONS:
+        if key in REGION_PAGES and counts.get(key):
+            items.append(item(f"/pages/{region_handle(key)}", name, counts[key], current == key))
+    return f'<ul class="zl-tabs zl-regions">{"".join(items)}</ul>'
 
 
 def event_li(e):
@@ -185,7 +205,8 @@ def build_region_html(events, today, key):
     updated = today.strftime("%Y年%-m月%-d日")
     return (
         '<div id="zine-list">'
-        + (f'<ul class="zl-tabs">{tabs}</ul>' if tabs else "")
+        + region_nav(events, today, key)
+        + (f'<ul class="zl-tabs zl-months">{tabs}</ul>' if tabs else "")
         + sections
         + f'<p class="zl-note"><time datetime="{today.strftime("%Y-%m-%dT%H:%M:%S+09:00")}">{updated}</time>時点の情報です。'
         '開催内容は各公式サイトでご確認ください。</p>'
