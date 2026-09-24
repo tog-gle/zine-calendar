@@ -76,6 +76,30 @@ def region_of(ev):
 
 
 # ─────────────────────────────────────────────
+# 地域別ページ（ページが無ければ自動で作成し、以後は一覧部分だけ更新）
+# 導入文は作成時だけ入る。あとはShopifyの編集画面で自由に直してOK
+# ─────────────────────────────────────────────
+REGION_PAGES = {
+    "hokkaido-tohoku": ("北海道・東北",
+        "札幌や仙台をはじめ、北海道・東北で開かれるZINEフェスなど、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+    "kanto": ("東京・関東",
+        "東京・神奈川をはじめ関東で開かれるZINEフェス東京、文学フリマ東京、コミティアなど、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+    "chubu": ("名古屋・中部",
+        "名古屋・静岡・長野・北陸など中部で開かれるZINEフェスなど、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+    "kansai": ("大阪・関西",
+        "大阪・京都・神戸をはじめ関西で開かれるZINEフェス大阪、まちのZINEフェス、文学フリマ京都、関西コミティアなど、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+    "chugoku-shikoku": ("広島・中国・四国",
+        "広島・山口・香川・愛媛・高知など中国・四国で開かれるZINEフェスなど、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+    "kyushu-okinawa": ("福岡・九州・沖縄",
+        "福岡・熊本・鹿児島・沖縄など九州・沖縄で開かれるZINEフェス、文学フリマ福岡など、ZINEや同人誌を出展・購入できるイベントの日程をまとめています。"),
+}
+
+
+def region_handle(key):
+    return f"{PAGE_HANDLE}-{key}"
+
+
+# ─────────────────────────────────────────────
 # HTML生成
 # ─────────────────────────────────────────────
 
@@ -110,7 +134,10 @@ def build_html(events, today):
         sections.append(
             f'<section class="zl-region" id="zl-{key}">'
             f"<h2>{escape(heading)}</h2>"
-            f'<ul class="zl-list">{"".join(lis)}</ul></section>'
+            f'<ul class="zl-list">{"".join(lis)}</ul>'
+            + (f'<p class="zl-more"><a href="/pages/{region_handle(key)}">{escape(REGION_PAGES[key][0])}のZINEイベントだけを見る →</a></p>'
+               if key in REGION_PAGES else "")
+            + "</section>"
         )
 
     updated = today.strftime("%Y年%-m月%-d日")
@@ -122,6 +149,58 @@ def build_html(events, today):
         '開催内容は各公式サイトでご確認ください。</p>'
         '</div>'
     )
+
+
+def event_li(e):
+    title = escape(e["title"])
+    link = (f'<a href="{escape(e["url"])}" target="_blank" rel="noopener">{title}</a>'
+            if e.get("url") else title)
+    meta = escape(e.get("date_display") or e["date"])
+    if e.get("venue"):
+        meta += "｜" + escape(e["venue"])
+    return f'<li><h3>{link}</h3><p><time datetime="{e["date"]}">{meta}</time></p></li>'
+
+
+def build_region_html(events, today, key):
+    """地域別ページの一覧部分。見出しは月ごと（h2）、イベントはh3"""
+    upcoming = sorted(
+        [e for e in events if e.get("date") and e["date"] >= today.strftime("%Y-%m-%d") and region_of(e) == key],
+        key=lambda e: (e["date"], e["title"]))
+    months = {}
+    for e in upcoming:
+        months.setdefault(e["date"][:7], []).append(e)
+
+    label = REGION_PAGES[key][0]
+    tabs = "".join(f'<li><a href="#zl-{ym}">{int(ym[5:])}月</a></li>' for ym in months)
+    sections = "".join(
+        f'<section class="zl-region" id="zl-{ym}"><h2>{int(ym[:4])}年{int(ym[5:])}月の{escape(label)}のZINEイベント</h2>'
+        f'<ul class="zl-list">{"".join(event_li(e) for e in items)}</ul></section>'
+        for ym, items in months.items())
+    if not sections:
+        sections = '<p>現在、予定されているイベントはありません。</p>'
+
+    others = "".join(
+        f'<li><a href="/pages/{region_handle(k)}">{escape(v[0])}</a></li>'
+        for k, v in REGION_PAGES.items() if k != key)
+    updated = today.strftime("%Y年%-m月%-d日")
+    return (
+        '<div id="zine-list">'
+        + (f'<ul class="zl-tabs">{tabs}</ul>' if tabs else "")
+        + sections
+        + f'<p class="zl-note"><time datetime="{today.strftime("%Y-%m-%dT%H:%M:%S+09:00")}">{updated}</time>時点の情報です。'
+        '開催内容は各公式サイトでご確認ください。</p>'
+        f'<h2>ほかの地域のZINEイベント</h2><ul class="zl-others">{others}'
+        f'<li><a href="/pages/{PAGE_HANDLE}">全国のZINEイベント一覧</a></li></ul>'
+        '</div>'
+    )
+
+
+def region_years(events, today, key):
+    ys = sorted({e["date"][:4] for e in events
+                 if e.get("date") and e["date"] >= today.strftime("%Y-%m-%d") and region_of(e) == key})
+    if not ys:
+        return today.strftime("%Y")
+    return ys[0] if len(ys) == 1 else f"{ys[0]}–{ys[-1]}"
 
 
 # ─────────────────────────────────────────────
@@ -153,6 +232,24 @@ def gql(shop, token, query, variables=None):
     return data["data"]
 
 
+PAGE_QUERY = 'query($q:String!){pages(first:1,query:$q){nodes{id handle title body templateSuffix}}}'
+UPDATE = ('mutation($id:ID!,$page:PageUpdateInput!){pageUpdate(id:$id,page:$page)'
+          '{page{id}userErrors{field message}}}')
+CREATE = ('mutation($page:PageCreateInput!){pageCreate(page:$page)'
+          '{page{id handle}userErrors{field message}}}')
+
+
+def find_page(shop, token, handle):
+    nodes = gql(shop, token, PAGE_QUERY, {"q": f"handle:{handle}"})["pages"]["nodes"]
+    return next((n for n in nodes if n["handle"] == handle), None)
+
+
+def check(res, key):
+    errs = res[key]["userErrors"]
+    if errs:
+        raise RuntimeError(errs)
+
+
 def main():
     with open("docs/events.json", encoding="utf-8") as f:
         events = json.load(f)["events"]
@@ -160,9 +257,12 @@ def main():
     block = build_html(events, today)
 
     if "--preview" in sys.argv:
+        wrap = '<meta charset="utf-8"><div style="max-width:720px;margin:auto;font-family:sans-serif">{}</div>'
         with open("preview.html", "w", encoding="utf-8") as f:
-            f.write(f'<meta charset="utf-8"><div style="max-width:720px;margin:auto;font-family:sans-serif">{block}</div>')
-        print("preview.html を書き出しました")
+            f.write(wrap.format(block))
+        with open("preview-kanto.html", "w", encoding="utf-8") as f:
+            f.write(wrap.format(build_region_html(events, today, "kanto")))
+        print("preview.html / preview-kanto.html を書き出しました")
         return
 
     shop = (os.environ.get("SHOPIFY_SHOP") or "").strip()
@@ -174,30 +274,46 @@ def main():
         return
 
     token = get_token(shop, cid, secret)
-    data = gql(shop, token,
-               'query($q:String!){pages(first:1,query:$q){nodes{id handle body}}}',
-               {"q": f"handle:{PAGE_HANDLE}"})
-    nodes = data["pages"]["nodes"]
-    if not nodes:
-        raise RuntimeError(f"ページ {PAGE_HANDLE} が見つかりません")
-    page = nodes[0]
-    body = page["body"] or ""
 
+    # 1. 全国ページ
+    page = find_page(shop, token, PAGE_HANDLE)
+    if not page:
+        raise RuntimeError(f"ページ {PAGE_HANDLE} が見つかりません")
+    body = page["body"] or ""
     if not MARK.search(body):
         raise RuntimeError('ページ本文に <div id="zine-list"></div> がありません。HTML表示で本文に追加してください')
-    new_body = MARK.sub(lambda m: block, body, count=1)
-
-    if new_body == body:
-        print("[Shopify] 変更なし")
-        return
-
-    res = gql(shop, token,
-              'mutation($id:ID!,$page:PageUpdateInput!){pageUpdate(id:$id,page:$page){page{id}userErrors{field message}}}',
-              {"id": page["id"], "page": {"body": new_body}})
-    errs = res["pageUpdate"]["userErrors"]
-    if errs:
-        raise RuntimeError(errs)
+    check(gql(shop, token, UPDATE, {"id": page["id"], "page": {"body": MARK.sub(lambda m: block, body, count=1)}}),
+          "pageUpdate")
     print(f"[Shopify] {PAGE_HANDLE} を更新しました")
+
+    # 2. 地域別ページ（全国ページと同じテンプレートを使う＝入稿日チェックも付く）
+    template = page.get("templateSuffix") or ""
+    failed = []
+    for key, (label, intro) in REGION_PAGES.items():
+        handle = region_handle(key)
+        title = f"{label}のZINEイベント・スケジュール {region_years(events, today, key)}"
+        rblock = build_region_html(events, today, key)
+        try:
+            rp = find_page(shop, token, handle)
+            if rp is None:
+                new_body = (f"<p>{escape(intro)}週に2回、自動で更新しています。</p>"
+                            f"<p>出たいイベントにチェックを入れると、印刷の入稿日の目安が分かります。</p>{rblock}")
+                page_input = {"title": title, "handle": handle, "body": new_body, "isPublished": True}
+                if template:
+                    page_input["templateSuffix"] = template
+                check(gql(shop, token, CREATE, {"page": page_input}), "pageCreate")
+                print(f"[Shopify] {handle} を作成しました")
+            else:
+                rbody = rp["body"] or ""
+                rbody = MARK.sub(lambda m: rblock, rbody, count=1) if MARK.search(rbody) else rbody + rblock
+                check(gql(shop, token, UPDATE, {"id": rp["id"], "page": {"title": title, "body": rbody}}),
+                      "pageUpdate")
+                print(f"[Shopify] {handle} を更新しました")
+        except Exception as err:
+            print(f"[Shopify] {handle} でエラー: {err}")
+            failed.append(handle)
+    if failed:
+        raise RuntimeError(f"地域別ページの一部が失敗: {', '.join(failed)}")
 
 
 if __name__ == "__main__":
