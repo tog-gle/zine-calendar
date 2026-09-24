@@ -50,3 +50,12 @@ jobs:
           git add docs/events.json
           git diff --staged --quiet || git commit -m "chore: update events.json [$(date '+%Y-%m-%d')]"
           git push
+
+      # diybooks.jp の一覧ページ本文（地域別）を更新
+      - name: Update Shopify page
+        continue-on-error: true
+        env:
+          SHOPIFY_SHOP: ${{ secrets.SHOPIFY_SHOP }}
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+        run: python update_shopify.py
