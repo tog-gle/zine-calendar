@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-24T03:07:33.030733",
-  "count": 52,
+  "updated_at": "2026-09-24T05:01:29.493266",
+  "count": 61,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -8,15 +8,6 @@
       "date_display": "2026年4月18日",
       "venue": "DIY BOOKS（尼崎・武庫之荘）",
       "url": "https://www.instagram.com/p/DWD6CTNgTAp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
-      "category": "DIY BOOKS",
-      "source": "manual"
-    },
-    {
-      "title": "Oui,ZINE8",
-      "date": "2026-04-18",
-      "date_display": "2026年4月18日",
-      "venue": "DIY BOOKS（尼崎・武庫之荘）",
-      "url": "https://diybooks.jp",
       "category": "DIY BOOKS",
       "source": "manual"
     },
@@ -39,6 +30,42 @@
       "source": "artbookosaka"
     },
     {
+      "title": "まちのZINEフェス 神戸・ふたば学舎",
+      "date": "2026-07-19",
+      "date_display": "2026年7月19日〜20日",
+      "venue": "ふたば学舎（兵庫・神戸）",
+      "url": "https://zine-fest.tou10.jp/event/kobe-futaba",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
+      "title": "まちのZINEフェス 長岡京・長岡京バンビオ",
+      "date": "2026-08-22",
+      "date_display": "2026年8月22日〜23日",
+      "venue": "長岡京バンビオ（京都・長岡京）",
+      "url": "https://zine-fest.tou10.jp/event/nagaokakyo",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
+      "title": "まちのZINEフェス 神戸・西神中央ホール",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日",
+      "venue": "西神中央ホール（兵庫・神戸）",
+      "url": "https://zine-fest.tou10.jp/event/kobe-seishin",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
+      "title": "まちのZINEフェス 神戸・TOTTEI PARK",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日〜27日",
+      "venue": "TOTTEI PARK（緑の丘ホール）（兵庫・神戸）",
+      "url": "https://zine-fest.tou10.jp/event/kobe-tottei",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
       "title": "ZINEフェス東京",
       "date": "2026-09-26",
       "date_display": "2026年9月26日",
@@ -55,6 +82,15 @@
       "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "まちのZINEフェス 尼崎・阪神尼崎駅前・中央公園",
+      "date": "2026-10-04",
+      "date_display": "2026年10月4日",
+      "venue": "阪神尼崎駅前・中央公園（兵庫・尼崎）",
+      "url": "https://zine-fest.tou10.jp/event/amagasaki",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス岩手",
@@ -111,6 +147,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "Oui,ZINE10",
+      "date": "2026-10-24",
+      "date_display": "2026年10月24日",
+      "venue": "DIY BOOKS（尼崎・武庫之荘）",
+      "url": "https://diybooks.jp",
+      "category": "DIY BOOKS",
+      "source": "manual"
+    },
+    {
       "title": "ZINEフェス福岡",
       "date": "2026-10-31",
       "date_display": "2026年10月31日",
@@ -147,6 +192,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEアーケードやまぐち",
+      "date": "2026-11-07",
+      "date_display": "2026年11月7日",
+      "venue": "山口市中心商店街アーケード・井筒屋百貨店5F（山口県山口市／HONYAらDO主催）",
+      "url": "https://honyarado.jp/index.php/zine_arcade/",
+      "category": "その他",
+      "source": "manual"
+    },
+    {
       "title": "文学フリマ東京43",
       "date": "2026-11-08",
       "date_display": "2026年11月8日",
@@ -172,6 +226,15 @@
       "url": "https://note.com/bookcultureclub/n/nade821ca5ec7",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "まちのZINEフェス 東広島・東広島市市民文化センター",
+      "date": "2026-11-21",
+      "date_display": "2026年11月21日",
+      "venue": "東広島市市民文化センター（広島・東広島）",
+      "url": "https://zine-fest.tou10.jp/event/higashihiroshima",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス茅ヶ崎",
@@ -264,6 +327,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINE COMMUNITY（ジンコミ）",
+      "date": "2026-12-20",
+      "date_display": "2026年12月20日",
+      "venue": "マイドームおおさか（大阪）",
+      "url": "https://note.com/zinecom_team/n/ne19e7b714c4a",
+      "category": "その他",
+      "source": "manual"
+    },
+    {
       "title": "コミックマーケット１０９",
       "date": "2026-12-29",
       "date_display": "2026年12月29日〜31日",
@@ -298,6 +370,15 @@
       "url": "https://note.com/bookcultureclub/n/n568fc8de72f7",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "まちのZINEフェス 大津・旧大津公会堂",
+      "date": "2027-01-10",
+      "date_display": "2027年1月10日",
+      "venue": "旧大津公会堂（滋賀・大津）",
+      "url": "https://zine-fest.tou10.jp/event/otsu",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
     },
     {
       "title": "ZINEフェス福島",
