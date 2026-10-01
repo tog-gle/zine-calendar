@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-28T03:37:02.715376",
-  "count": 61,
+  "updated_at": "2026-10-01T04:07:27.942402",
+  "count": 60,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -19,15 +19,6 @@
       "url": "https://www.k-comitia.com/",
       "category": "コミティア",
       "source": "k_comitia"
-    },
-    {
-      "title": "Art Book Osaka 2026",
-      "date": "2026-05-30",
-      "date_display": "2026年5月30日〜31日",
-      "venue": "シーサイドスタジオCASO（大阪）",
-      "url": "https://artbookosaka.com/",
-      "category": "アートブックフェア",
-      "source": "artbookosaka"
     },
     {
       "title": "まちのZINEフェス 神戸・ふたば学舎",
@@ -64,24 +55,6 @@
       "url": "https://zine-fest.tou10.jp/event/kobe-tottei",
       "category": "まちのZINEフェス",
       "source": "mzfest"
-    },
-    {
-      "title": "ZINEフェス東京",
-      "date": "2026-09-26",
-      "date_display": "2026年9月26日",
-      "venue": "東京",
-      "url": "https://note.com/bookcultureclub/n/na022cade2895",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス京都（出展受付終了）",
-      "date": "2026-09-27",
-      "date_display": "2026年9月27日",
-      "venue": "京都",
-      "url": "https://note.com/bookcultureclub/n/na48bd8898ee2",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "まちのZINEフェス 尼崎・阪神尼崎駅前・中央公園",
@@ -541,6 +514,24 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "Art Book Osaka 2027",
+      "date": "2027-06-05",
+      "date_display": "2027年6月5日〜6日",
+      "venue": "シーサイドスタジオCASO（大阪）",
+      "url": "https://artbookosaka.com/",
+      "category": "アートブックフェア",
+      "source": "artbookosaka"
+    },
+    {
+      "title": "ZINEフェス京都",
+      "date": "2027-06-26",
+      "date_display": "2027年6月26日",
+      "venue": "京都",
+      "url": "https://note.com/bookcultureclub/n/n6b1c02db20da",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス茨城",
