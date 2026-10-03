@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-01T04:07:27.942402",
-  "count": 60,
+  "updated_at": "2026-10-03T08:23:57.684360",
+  "count": 61,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -39,20 +39,20 @@
       "source": "mzfest"
     },
     {
-      "title": "まちのZINEフェス 神戸・西神中央ホール",
-      "date": "2026-09-26",
-      "date_display": "2026年9月26日",
-      "venue": "西神中央ホール（兵庫・神戸）",
-      "url": "https://zine-fest.tou10.jp/event/kobe-seishin",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
-    },
-    {
       "title": "まちのZINEフェス 神戸・TOTTEI PARK",
       "date": "2026-09-26",
       "date_display": "2026年9月26日〜27日",
       "venue": "TOTTEI PARK（緑の丘ホール）（兵庫・神戸）",
       "url": "https://zine-fest.tou10.jp/event/kobe-tottei",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
+      "title": "まちのZINEフェス 神戸・西神中央ホール",
+      "date": "2026-09-26",
+      "date_display": "2026年9月26日",
+      "venue": "西神中央ホール（兵庫・神戸）",
+      "url": "https://zine-fest.tou10.jp/event/kobe-seishin",
       "category": "まちのZINEフェス",
       "source": "mzfest"
     },
@@ -190,6 +190,15 @@
       "url": "https://note.com/bookcultureclub/n/n4a2a93789b5b",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEとフリマ",
+      "date": "2026-11-14",
+      "date_display": "2026年11月14日",
+      "venue": "gamoyon Art labo（大阪府大阪市）",
+      "url": "https://www.instagram.com/zine_to_fleama/",
+      "category": "その他",
+      "source": "manual"
     },
     {
       "title": "ZINEフェス長野",
