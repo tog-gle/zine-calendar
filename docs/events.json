@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-03T08:23:57.684360",
-  "count": 61,
+  "updated_at": "2026-10-05T04:01:34.276977",
+  "count": 62,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -26,15 +26,6 @@
       "date_display": "2026年7月19日〜20日",
       "venue": "ふたば学舎（兵庫・神戸）",
       "url": "https://zine-fest.tou10.jp/event/kobe-futaba",
-      "category": "まちのZINEフェス",
-      "source": "mzfest"
-    },
-    {
-      "title": "まちのZINEフェス 長岡京・長岡京バンビオ",
-      "date": "2026-08-22",
-      "date_display": "2026年8月22日〜23日",
-      "venue": "長岡京バンビオ（京都・長岡京）",
-      "url": "https://zine-fest.tou10.jp/event/nagaokakyo",
       "category": "まちのZINEフェス",
       "source": "mzfest"
     },
@@ -462,6 +453,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "まちのZINEフェス 長岡京・長岡京市立産業文化センター",
+      "date": "2027-03-06",
+      "date_display": "2027年3月6日〜7日",
+      "venue": "長岡京市立産業文化センター（京都・長岡京）",
+      "url": "https://zine-fest.tou10.jp/event/nagaokakyo",
+      "category": "まちのZINEフェス",
+      "source": "mzfest"
+    },
+    {
       "title": "ZINEフェス金沢",
       "date": "2027-03-07",
       "date_display": "2027年3月7日",
@@ -548,6 +548,15 @@
       "date_display": "2027年7月19日",
       "venue": "茨城",
       "url": "https://note.com/bookcultureclub/n/nc4fa7becd14c",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス岩手",
+      "date": "2027-08-29",
+      "date_display": "2027年8月29日",
+      "venue": "岩手",
+      "url": "https://note.com/bookcultureclub/n/ned6e0d010984",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     }
