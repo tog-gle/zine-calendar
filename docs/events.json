@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T04:01:34.276977",
+  "updated_at": "2026-10-08T04:28:51.848774",
   "count": 62,
   "events": [
     {
@@ -55,15 +55,6 @@
       "url": "https://zine-fest.tou10.jp/event/amagasaki",
       "category": "まちのZINEフェス",
       "source": "mzfest"
-    },
-    {
-      "title": "ZINEフェス岩手",
-      "date": "2026-10-04",
-      "date_display": "2026年10月4日",
-      "venue": "岩手",
-      "url": "https://note.com/bookcultureclub/n/nc6f0e6142f68",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "文学フリマ福岡12",
@@ -431,6 +422,15 @@
       "date_display": "2027年2月20日",
       "venue": "沖縄",
       "url": "https://note.com/bookcultureclub/n/n399901fb69e1",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェスイラスト",
+      "date": "2027-02-23",
+      "date_display": "2027年2月23日",
+      "venue": "イラスト",
+      "url": "https://note.com/bookcultureclub/n/nebd7f49efbf6",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
