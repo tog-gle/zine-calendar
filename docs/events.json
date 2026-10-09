@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-08T04:28:51.848774",
-  "count": 62,
+  "updated_at": "2026-10-09T07:08:15.679654",
+  "count": 63,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -145,6 +145,15 @@
       "url": "https://note.com/bookcultureclub/n/n2fc2e06d777b",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "たからばZINE日和atジャパンコーヒーフェスティバル",
+      "date": "2026-11-07",
+      "date_display": "2026年11月7日〜8日",
+      "venue": "宝塚市立文化芸術センター（兵庫県宝塚市）",
+      "url": "https://takarazuka-arts-center.jp/post-event/post-event-8990/",
+      "category": "その他",
+      "source": "manual"
     },
     {
       "title": "ZINEアーケードやまぐち",
