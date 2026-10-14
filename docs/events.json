@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-12T04:18:12.761358",
-  "count": 63,
+  "updated_at": "2026-10-14T06:14:33.246243",
+  "count": 64,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -289,6 +289,15 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "LOCAL 〇〇 BOOKS",
+      "date": "2026-12-13",
+      "date_display": "2026年12月13日",
+      "venue": "パープルタウン（鳥取県倉吉市）",
+      "url": "https://www.instagram.com/p/DeY13lGPNan/",
+      "category": "その他",
+      "source": "manual"
     },
     {
       "title": "ZINEフェス群馬",
