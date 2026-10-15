@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-14T06:14:33.246243",
-  "count": 64,
+  "updated_at": "2026-10-15T03:10:28.006357",
+  "count": 65,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -521,6 +521,15 @@
       "date_display": "2027年4月4日",
       "venue": "松山",
       "url": "https://note.com/bookcultureclub/n/n228358174d96",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス栃木",
+      "date": "2027-05-08",
+      "date_display": "2027年5月8日",
+      "venue": "栃木",
+      "url": "https://note.com/bookcultureclub/n/nc15b61b0a917",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
