@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-15T03:10:28.006357",
-  "count": 65,
+  "updated_at": "2026-10-19T03:13:58.305124",
+  "count": 63,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -10,15 +10,6 @@
       "url": "https://www.instagram.com/p/DWD6CTNgTAp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
       "category": "DIY BOOKS",
       "source": "manual"
-    },
-    {
-      "title": "関西コミティア79",
-      "date": "2026-05-16",
-      "date_display": "2026年5月16日",
-      "venue": "インテックス大阪 2号館",
-      "url": "https://www.k-comitia.com/",
-      "category": "コミティア",
-      "source": "k_comitia"
     },
     {
       "title": "まちのZINEフェス 神戸・ふたば学舎",
@@ -64,33 +55,6 @@
       "url": "https://bunfree.net/event/fukuoka12/",
       "category": "文学フリマ",
       "source": "bunfree_auto"
-    },
-    {
-      "title": "ZINEフェス熊本",
-      "date": "2026-10-10",
-      "date_display": "2026年10月10日",
-      "venue": "熊本",
-      "url": "https://note.com/bookcultureclub/n/nfae1d4e6e76a?app_launch=false",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "ZINEフェス文芸・大阪",
-      "date": "2026-10-12",
-      "date_display": "2026年10月12日",
-      "venue": "文芸・大阪",
-      "url": "https://note.com/bookcultureclub/n/n844b49114c2a?app_launch=false",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
-      "title": "関西コミティア77",
-      "date": "2026-10-18",
-      "date_display": "2026年10月18日",
-      "venue": "京都パルスプラザ 大展示場",
-      "url": "https://www.k-comitia.com/",
-      "category": "コミティア",
-      "source": "k_comitia"
     },
     {
       "title": "ZINEフェス仙台",
@@ -532,6 +496,24 @@
       "url": "https://note.com/bookcultureclub/n/nc15b61b0a917",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス青森",
+      "date": "2027-05-09",
+      "date_display": "2027年5月9日",
+      "venue": "青森",
+      "url": "https://note.com/bookcultureclub/n/n9e3d3e991c52",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "関西コミティア79",
+      "date": "2027-05-16",
+      "date_display": "2027年5月16日",
+      "venue": "インテックス大阪 2号館",
+      "url": "https://www.k-comitia.com/",
+      "category": "コミティア",
+      "source": "k_comitia"
     },
     {
       "title": "ZINEフェス新潟",
