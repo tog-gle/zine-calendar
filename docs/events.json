@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-22T03:16:00.070504",
-  "count": 63,
+  "updated_at": "2026-10-26T03:10:55.145995",
+  "count": 65,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -55,15 +55,6 @@
       "url": "https://bunfree.net/event/fukuoka12/",
       "category": "文学フリマ",
       "source": "bunfree_auto"
-    },
-    {
-      "title": "ZINEフェス仙台",
-      "date": "2026-10-24",
-      "date_display": "2026年10月24日",
-      "venue": "仙台",
-      "url": "https://note.com/bookcultureclub/n/nbc4e198055b3",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "Oui,ZINE10",
@@ -426,6 +417,15 @@
       "source": "zinefes_note"
     },
     {
+      "title": "ZINEフェス仙台",
+      "date": "2027-02-27",
+      "date_display": "2027年2月27日",
+      "venue": "仙台",
+      "url": "https://note.com/bookcultureclub/n/n01e401e5b55e",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
       "title": "ZINEフェス写真＠神戸・三宮KIITOホール",
       "date": "2027-02-28",
       "date_display": "2027年2月28日",
@@ -541,6 +541,24 @@
       "url": "https://www.comitia.co.jp/html/schedule.html",
       "category": "コミティア",
       "source": "comitia"
+    },
+    {
+      "title": "Art Book Osaka 2027",
+      "date": "2027-06-05",
+      "date_display": "2027年6月5日〜6日",
+      "venue": "シーサイドスタジオCASO（大阪）",
+      "url": "https://artbookosaka.com/",
+      "category": "アートブックフェア",
+      "source": "artbookosaka"
+    },
+    {
+      "title": "ZINEフェス熊本",
+      "date": "2027-06-19",
+      "date_display": "2027年6月19日",
+      "venue": "熊本",
+      "url": "https://note.com/bookcultureclub/n/nd4be4168ccf6",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス京都",
