@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-02T04:23:32.174780",
-  "count": 67,
+  "updated_at": "2026-11-05T05:04:10.720506",
+  "count": 64,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -66,15 +66,6 @@
       "source": "manual"
     },
     {
-      "title": "ZINEフェス福岡",
-      "date": "2026-10-31",
-      "date_display": "2026年10月31日",
-      "venue": "福岡",
-      "url": "https://note.com/bookcultureclub/n/ndf606a783dcb",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "ZINE BARTHE BAZAAR",
       "date": "2026-10-31",
       "date_display": "2026年10月31日〜11月1日",
@@ -84,15 +75,6 @@
       "source": "manual"
     },
     {
-      "title": "ZINEフェス広島",
-      "date": "2026-11-01",
-      "date_display": "2026年11月1日",
-      "venue": "広島",
-      "url": "https://note.com/bookcultureclub/n/n8b94085e2d29",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "Art Book Osaka 2027",
       "date": "2026-11-01",
       "date_display": "2026年11月1日〜6日",
@@ -100,15 +82,6 @@
       "url": "https://artbookosaka.com/",
       "category": "アートブックフェア",
       "source": "artbookosaka"
-    },
-    {
-      "title": "ZINEフェス神戸",
-      "date": "2026-11-03",
-      "date_display": "2026年11月3日",
-      "venue": "神戸",
-      "url": "https://note.com/bookcultureclub/n/n25a69a965fb5",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "ZINEフェス吉祥寺",
