@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-05T05:04:10.720506",
-  "count": 64,
+  "updated_at": "2026-11-08T20:25:19.009145",
+  "count": 65,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -163,6 +163,15 @@
       "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
       "category": "ZINEフェス",
       "source": "zinefes_note"
+    },
+    {
+      "title": "ZINE above Hiroshima",
+      "date": "2026-11-21",
+      "date_display": "2026年11月21日",
+      "venue": "そごう広島屋上（広島県広島市）",
+      "url": "https://www.instagram.com/zine_above_hiroshima?exln=MW1pMjg5c2FocXFnaQ==",
+      "category": "その他",
+      "source": "manual"
     },
     {
       "title": "ZINEフェス札幌",
