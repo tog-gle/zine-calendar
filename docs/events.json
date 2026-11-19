@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-16T04:43:37.907887",
-  "count": 66,
+  "updated_at": "2026-11-19T05:53:09.946628",
+  "count": 68,
   "events": [
     {
       "title": "ZINEの商店街",
@@ -503,6 +503,24 @@
       "date_display": "2027年4月4日",
       "venue": "松山",
       "url": "https://note.com/bookcultureclub/n/n228358174d96",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス写真",
+      "date": "2027-04-11",
+      "date_display": "2027年4月11日",
+      "venue": "写真",
+      "url": "https://note.com/bookcultureclub/n/n269addbcead0",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス文芸",
+      "date": "2027-04-11",
+      "date_display": "2027年4月11日",
+      "venue": "文芸",
+      "url": "https://note.com/bookcultureclub/n/n8d928d8fc3d4",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
