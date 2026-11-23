@@ -1,7 +1,16 @@
 {
-  "updated_at": "2026-11-19T05:53:09.946628",
-  "count": 68,
+  "updated_at": "2026-11-23T05:44:32.641761",
+  "count": 70,
   "events": [
+    {
+      "title": "TOKYO ART BOOK FAIR",
+      "date": "2026-01-21",
+      "date_display": "2026年1月21日〜1月4日",
+      "venue": "東京都現代美術館 企画展示室B2F、エントランスホールほか",
+      "url": "https://tokyoartbookfair.com/",
+      "category": "アートブックフェア",
+      "source": "tabf"
+    },
     {
       "title": "ZINEの商店街",
       "date": "2026-04-18",
@@ -503,6 +512,15 @@
       "date_display": "2027年4月4日",
       "venue": "松山",
       "url": "https://note.com/bookcultureclub/n/n228358174d96",
+      "category": "ZINEフェス",
+      "source": "zinefes_note"
+    },
+    {
+      "title": "ZINEフェス札幌",
+      "date": "2027-04-10",
+      "date_display": "2027年4月10日",
+      "venue": "札幌",
+      "url": "https://note.com/bookcultureclub/n/ne87208a1f586?app_launch=false",
       "category": "ZINEフェス",
       "source": "zinefes_note"
     },
