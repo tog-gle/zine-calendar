@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-23T05:44:32.641761",
-  "count": 70,
+  "updated_at": "2026-11-26T06:49:56.979669",
+  "count": 65,
   "events": [
     {
       "title": "TOKYO ART BOOK FAIR",
@@ -84,15 +84,6 @@
       "source": "artbookosaka"
     },
     {
-      "title": "ZINEフェス吉祥寺",
-      "date": "2026-11-07",
-      "date_display": "2026年11月7日",
-      "venue": "吉祥寺",
-      "url": "https://note.com/bookcultureclub/n/n2fc2e06d777b",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "たからばZINE日和atジャパンコーヒーフェスティバル",
       "date": "2026-11-07",
       "date_display": "2026年11月7日〜8日",
@@ -120,15 +111,6 @@
       "source": "bunfree_auto"
     },
     {
-      "title": "ZINEフェス静岡",
-      "date": "2026-11-14",
-      "date_display": "2026年11月14日",
-      "venue": "静岡",
-      "url": "https://note.com/bookcultureclub/n/n4a2a93789b5b",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "ZINEとフリマ",
       "date": "2026-11-14",
       "date_display": "2026年11月14日",
@@ -136,15 +118,6 @@
       "url": "https://www.instagram.com/zine_to_fleama/",
       "category": "その他",
       "source": "manual"
-    },
-    {
-      "title": "ZINEフェス長野",
-      "date": "2026-11-15",
-      "date_display": "2026年11月15日",
-      "venue": "長野",
-      "url": "https://note.com/bookcultureclub/n/nade821ca5ec7",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "まちのZINEフェス 東広島・東広島市市民文化センター",
@@ -156,15 +129,6 @@
       "source": "mzfest"
     },
     {
-      "title": "ZINEフェス茅ヶ崎",
-      "date": "2026-11-21",
-      "date_display": "2026年11月21日",
-      "venue": "茅ヶ崎",
-      "url": "https://note.com/bookcultureclub/n/n1dba2bb96668",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
-    },
-    {
       "title": "ZINE above Hiroshima",
       "date": "2026-11-21",
       "date_display": "2026年11月21日",
@@ -172,15 +136,6 @@
       "url": "https://www.instagram.com/zine_above_hiroshima?exln=MW1pMjg5c2FocXFnaQ==",
       "category": "その他",
       "source": "manual"
-    },
-    {
-      "title": "ZINEフェス札幌",
-      "date": "2026-11-23",
-      "date_display": "2026年11月23日",
-      "venue": "札幌",
-      "url": "https://note.com/bookcultureclub/n/n5f45a945ca8b",
-      "category": "ZINEフェス",
-      "source": "zinefes_note"
     },
     {
       "title": "技術書典21（オフライン）",
